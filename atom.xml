@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Cribug's Notes]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://cribug.github.io/"/>
+  <updated>2015-09-09T18:38:29.137Z</updated>
+  <id>http://cribug.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Cribug]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://cribug.github.io/notes/2015/demo/"/>
+    <id>http://cribug.github.io/notes/2015/demo/</id>
+    <published>2015-09-11T17:21:51.438Z</published>
+    <updated>2015-09-09T18:38:29.137Z</updated>
+    <content type="html"><![CDATA[<h2 id="Welcome_to_MarkdownPad_2">Welcome to MarkdownPad 2</h2><p><strong>MarkdownPad</strong> is a full-featured Markdown editor for Windows.</p>
+<h3 id="Built_exclusively_for_Markdown">Built exclusively for Markdown</h3><p>Enjoy first-class Markdown support with easy access to  Markdown syntax and convenient keyboard shortcuts.</p>
+<p>Give them a try:</p>
+<ul>
+<li><strong>Bold</strong> (<code>Ctrl+B</code>) and <em>Italic</em> (<code>Ctrl+I</code>)</li>
+<li>Quotes (<code>Ctrl+Q</code>)</li>
+<li>Code blocks (<code>Ctrl+K</code>)</li>
+<li>Headings 1, 2, 3 (<code>Ctrl+1</code>, <code>Ctrl+2</code>, <code>Ctrl+3</code>)</li>
+<li>Lists (<code>Ctrl+U</code> and <code>Ctrl+Shift+O</code>)</li>
+</ul>
+<h3 id="See_your_changes_instantly_with_LivePreview">See your changes instantly with LivePreview</h3><p>Don’t guess if your <a href="http://markdownpad.com" target="_blank" rel="external">hyperlink syntax</a> is correct; LivePreview will show you exactly what your document looks like every time you press a key.</p>
+<h3 id="Make_it_your_own">Make it your own</h3><p>Fonts, color schemes, layouts and stylesheets are all 100% customizable so you can turn MarkdownPad into your perfect editor.</p>
+<h3 id="A_robust_editor_for_advanced_Markdown_users">A robust editor for advanced Markdown users</h3><p>MarkdownPad supports multiple Markdown processing engines, including standard Markdown, Markdown Extra (with Table support) and GitHub Flavored Markdown.</p>
+<p>With a tabbed document interface, PDF export, a built-in image uploader, session management, spell check, auto-save, syntax highlighting and a built-in CSS management interface, there’s no limit to what you can do with MarkdownPad.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Welcome_to_MarkdownPad_2">Welcome to MarkdownPad 2</h2><p><strong>MarkdownPad</strong> is a full-featured Markdown editor for Window]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://cribug.github.io/notes/2015/hello-world/"/>
+    <id>http://cribug.github.io/notes/2015/hello-world/</id>
+    <published>2015-09-11T10:13:29.374Z</published>
+    <updated>2015-09-11T10:13:29.374Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><pre><code><span class="variable">$hexo</span> <span class="literal">new</span> <span class="string">"My New Post"</span>
+<span class="built_in">var</span> a=<span class="number">1</span>;
+f<span class="subst">or</span>(){
+    <span class="built_in">var</span> a=<span class="number">1</span>;
+}<span class="keyword">else</span>{
+    <span class="built_in">var</span> a=<span class="number">1</span>; <span class="built_in">Set</span> rss <span class="keyword">to</span> specific value <span class="keyword">if</span> you have burned your feed already<span class="built_in">. </span><span class="built_in">Set</span> rss <span class="keyword">to</span> specific value <span class="keyword">if</span> you have burned your feed already<span class="built_in">.
+</span>}
+<span class="built_in">var</span> a=<span class="number">1</span>;
+</code></pre><p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$aa</span>=<span class="number">1</span>;</span><br><span class="line"><span class="variable">$bba</span>=<span class="number">1</span>;</span><br><span class="line"><span class="variable">$hexo</span>=<span class="string">"server"</span>;</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><p><code>$hexo generate
+$hexo generate
+$hexo generate</code></p>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><p>$ hexo <code>deploy</code></p>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+      <category term="Hello" scheme="http://cribug.github.io/tags/Hello/"/>
+    
+  </entry>
+  
+</feed>
