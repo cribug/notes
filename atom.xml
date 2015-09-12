@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://cribug.github.io/"/>
-  <updated>2015-09-09T18:38:29.137Z</updated>
+  <updated>2015-09-12T05:55:53.104Z</updated>
   <id>http://cribug.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title><![CDATA[AngularJS 应用单元测试起步]]></title>
     <link href="http://cribug.github.io/notes/2015/demo/"/>
     <id>http://cribug.github.io/notes/2015/demo/</id>
-    <published>2015-09-11T17:21:51.438Z</published>
-    <updated>2015-09-09T18:38:29.137Z</updated>
+    <published>2015-09-12T05:55:53.104Z</published>
+    <updated>2015-09-12T05:55:53.104Z</updated>
     <content type="html"><![CDATA[<h2 id="Welcome_to_MarkdownPad_2">Welcome to MarkdownPad 2</h2><p><strong>MarkdownPad</strong> is a full-featured Markdown editor for Windows.</p>
 <h3 id="Built_exclusively_for_Markdown">Built exclusively for Markdown</h3><p>Enjoy first-class Markdown support with easy access to  Markdown syntax and convenient keyboard shortcuts.</p>
 <p>Give them a try:</p>
@@ -38,6 +38,8 @@
     <summary type="html">
     <![CDATA[<h2 id="Welcome_to_MarkdownPad_2">Welcome to MarkdownPad 2</h2><p><strong>MarkdownPad</strong> is a full-featured Markdown editor for Window]]>
     </summary>
+    
+      <category term="nihao" scheme="http://cribug.github.io/tags/nihao/"/>
     
   </entry>
   
