@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="Fiddler, Wireshark, Mobile, caught" />
+  <meta name="keywords" content="database, mysql" />
 
 
 
@@ -45,16 +45,16 @@
 
 -->
 
-<meta name="description" content="在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。">
+<meta name="description" content="作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Windows和Linux。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Fiddler和Wireshark进行手机抓包">
-<meta property="og:url" content="http://cribug.github.io/2015/mobile-caught/index.html">
+<meta property="og:title" content="MySQL备份与恢复">
+<meta property="og:url" content="http://cribug.github.io/2015/mysql-backup/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。">
-<meta property="og:updated_time" content="2015-11-19T16:15:53.989Z">
+<meta property="og:description" content="作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Windows和Linux。">
+<meta property="og:updated_time" content="2015-11-19T16:56:48.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Fiddler和Wireshark进行手机抓包">
-<meta name="twitter:description" content="在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。">
+<meta name="twitter:title" content="MySQL备份与恢复">
+<meta name="twitter:description" content="作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Windows和Linux。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -64,7 +64,7 @@
   };
 </script>
 
-  <title> 使用Fiddler和Wireshark进行手机抓包 | Cribug's Notes </title>
+  <title> MySQL备份与恢复 | Cribug's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -190,7 +190,7 @@
           
           
             
-              使用Fiddler和Wireshark进行手机抓包
+              MySQL备份与恢复
             
           
         </h1>
@@ -199,8 +199,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-11-11T11:11:11+08:00" content="2015-11-11">
-            2015-11-11
+          <time itemprop="dateCreated" datetime="2015-11-18T18:18:18+08:00" content="2015-11-18">
+            2015-11-18
           </time>
         </span>
 
@@ -210,8 +210,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/mobile-caught/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/mobile-caught/" itemprop="commentsCount"></span>
+              <a href="/2015/mysql-backup/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/mysql-backup/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -225,22 +225,23 @@
       
 
       
-        <span itemprop="articleBody"><p>在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。</p>
-<h3 id="使用Fiddler抓取Http（Fiddler只能抓取Http）">使用Fiddler抓取Http（Fiddler只能抓取Http）</h3><p>Fiddler可以拦截发出或者收到的Http，可以修改Http的Request和Response数据，因此用这种方法可以模拟一些特殊场景（如包无响应、模拟一些很难出现的错误码等）。:</p>
-<ul>
-<li>电脑和手机连接到同一个Wifi（同一局域网下）。</li>
-<li>电脑端：设置Fiddler，Tools—&gt;Fiddler Option，在connections选项卡下设置监听的端口号（默认8888），然后勾选“Allow remote computers connect”，点击“ok”。</li>
-<li>手机端：将该Wifi的代（dai）理（li）选项设置为手动，主机名填写电脑的IP，端口号填写电脑端刚刚设置端口号（默认8888），保存。</li>
-<li>设置完毕，电脑端重启Fiddler，操作手机，即可在电脑端的Fiddler上看到http码流。</li>
+        <span itemprop="articleBody"><p>作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
+<h3 id="数据库备份">数据库备份</h3><ul>
+<li>进入MySQL的库目录（bin目录）。例如在Linux下，<code>cd /usr/local/mysql/bin</code>。</li>
+<li>利用MySQL命令导出数据库。例如，<code>mysqldump -uroot -p test &gt; test.sql</code>（导出数据库test到test.sql文件）。<br>提示输入密码时，输入该数据库用户名的密码。<br>Tip:如果导出单张表的话在数据库名后面键入表名即可。</li>
+<li>备份成功。会看到文件test.sql自动生成到bin目录下。</li>
 </ul>
-<h3 id="使用Wireshark抓包（需要电脑携带无线网卡）">使用Wireshark抓包（需要电脑携带无线网卡）</h3><p>该方法手机无须root，并且适用于各种有wifi功能的手机（IOS、Android等）、平板等。只要电脑的无线网卡具有无线承载功能，就可以。</p>
-<ul>
-<li>把电脑的网络做为热点分享出去。</li>
-<li>手机连接电脑热点。</li>
-<li>启动Wireshark，选择做为热点的网卡，点击start开始抓包。</li>
-<li>操作手机，可以抓取到手机所有与网络交互的数据包，如需停止，直接点击wireshark的stop即可。</li>
+<h3 id="数据库还原">数据库还原</h3><h5 id="方法一">方法一</h5><ul>
+<li>将备份得到的.sql文件放到MySQL的库目录下。</li>
+<li>进入MySQL控制台。<code>mysql -uroot -p</code></li>
+<li>选择数据库。<br>自己新建一个数据库itest，<code>create database itest;</code><br>然后<code>use itest;</code> （或者直接选择已有的数据库）</li>
+<li>导入数据。<code>source test.sql;</code>。</li>
 </ul>
-</span>
+<h5 id="方法二">方法二</h5><ul>
+<li>进入MySQL的库目录。</li>
+<li>直接导入数据。<code>mysql -u root -p itest &lt; test.sql</code>（导入test.sql文件到数据库itest）</li>
+</ul>
+<h3 id="Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录">Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录</h3></span>
       
     </div>
 
@@ -248,7 +249,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/抓包/" rel="tag">#抓包</a>
+            <a href="/tags/database/" rel="tag">#database</a>
           
         </div>
       
@@ -257,11 +258,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/mysql-backup/" rel="prev">MySQL备份与恢复</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/mobile-caught/" rel="next">使用Fiddler和Wireshark进行手机抓包</a>
             
           </div>
         </div>
@@ -276,10 +277,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/mobile-caught/"
-     data-title="使用Fiddler和Wireshark进行手机抓包"
+        <div class="ds-share flat" data-thread-key="2015/mysql-backup/"
+     data-title="MySQL备份与恢复"
      data-content=""
-     data-url="http://cribug.github.io/2015/mobile-caught/">
+     data-url="http://cribug.github.io/2015/mysql-backup/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -305,8 +306,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/mobile-caught/"
-                   data-title="使用Fiddler和Wireshark进行手机抓包" data-url="http://cribug.github.io/2015/mobile-caught/">
+              <div class="ds-thread" data-thread-key="2015/mysql-backup/"
+                   data-title="MySQL备份与恢复" data-url="http://cribug.github.io/2015/mysql-backup/">
               </div>
             
           </div>
@@ -420,7 +421,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Fiddler抓取Http（Fiddler只能抓取Http）"><span class="nav-number">1.</span> <span class="nav-text">使用Fiddler抓取Http（Fiddler只能抓取Http）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Wireshark抓包（需要电脑携带无线网卡）"><span class="nav-number">2.</span> <span class="nav-text">使用Wireshark抓包（需要电脑携带无线网卡）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库备份"><span class="nav-number">1.</span> <span class="nav-text">数据库备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库还原"><span class="nav-number">2.</span> <span class="nav-text">数据库还原</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法一"><span class="nav-number">2.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法二"><span class="nav-number">2.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录"><span class="nav-number">3.</span> <span class="nav-text">Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

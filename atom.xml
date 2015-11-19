@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://cribug.github.io/"/>
-  <updated>2015-11-12T07:42:37.868Z</updated>
+  <updated>2015-11-19T16:56:48.257Z</updated>
   <id>http://cribug.github.io/</id>
   
   <author>
@@ -15,20 +15,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[MySQL备份与恢复]]></title>
+    <link href="http://cribug.github.io/2015/mysql-backup/"/>
+    <id>http://cribug.github.io/2015/mysql-backup/</id>
+    <published>2015-11-18T10:18:18.000Z</published>
+    <updated>2015-11-19T16:56:48.257Z</updated>
+    <content type="html"><![CDATA[<p>作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
+<h3 id="数据库备份">数据库备份</h3><ul>
+<li>进入MySQL的库目录（bin目录）。例如在Linux下，<code>cd /usr/local/mysql/bin</code>。</li>
+<li>利用MySQL命令导出数据库。例如，<code>mysqldump -uroot -p test &gt; test.sql</code>（导出数据库test到test.sql文件）。<br>提示输入密码时，输入该数据库用户名的密码。<br>Tip:如果导出单张表的话在数据库名后面键入表名即可。</li>
+<li>备份成功。会看到文件test.sql自动生成到bin目录下。</li>
+</ul>
+<h3 id="数据库还原">数据库还原</h3><h5 id="方法一">方法一</h5><ul>
+<li>将备份得到的.sql文件放到MySQL的库目录下。</li>
+<li>进入MySQL控制台。<code>mysql -uroot -p</code></li>
+<li>选择数据库。<br>自己新建一个数据库itest，<code>create database itest;</code><br>然后<code>use itest;</code> （或者直接选择已有的数据库）</li>
+<li>导入数据。<code>source test.sql;</code>。</li>
+</ul>
+<h5 id="方法二">方法二</h5><ul>
+<li>进入MySQL的库目录。</li>
+<li>直接导入数据。<code>mysql -u root -p itest &lt; test.sql</code>（导入test.sql文件到数据库itest）</li>
+</ul>
+<h3 id="Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录">Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录</h3>]]></content>
+    <summary type="html">
+    <![CDATA[作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Windows和Linux。]]>
+    
+    </summary>
+    
+      <category term="database" scheme="http://cribug.github.io/tags/database/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[使用Fiddler和Wireshark进行手机抓包]]></title>
     <link href="http://cribug.github.io/2015/mobile-caught/"/>
     <id>http://cribug.github.io/2015/mobile-caught/</id>
     <published>2015-11-11T03:11:11.000Z</published>
-    <updated>2015-11-12T07:42:37.868Z</updated>
+    <updated>2015-11-19T16:15:53.989Z</updated>
     <content type="html"><![CDATA[<p>在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。</p>
-<h3 id="使用Fiddler抓取Http（Fiddler只能抓取Http，亲测可用）">使用Fiddler抓取Http（Fiddler只能抓取Http，亲测可用）</h3><p>Fiddler可以拦截发出或者收到的Http，可以修改Http的Request和Response数据，因此用这种方法可以模拟一些特殊场景（如包无响应、模拟一些很难出现的错误码等）。:</p>
+<h3 id="使用Fiddler抓取Http（Fiddler只能抓取Http）">使用Fiddler抓取Http（Fiddler只能抓取Http）</h3><p>Fiddler可以拦截发出或者收到的Http，可以修改Http的Request和Response数据，因此用这种方法可以模拟一些特殊场景（如包无响应、模拟一些很难出现的错误码等）。:</p>
 <ul>
 <li>电脑和手机连接到同一个Wifi（同一局域网下）。</li>
 <li>电脑端：设置Fiddler，Tools—&gt;Fiddler Option，在connections选项卡下设置监听的端口号（默认8888），然后勾选“Allow remote computers connect”，点击“ok”。</li>
 <li>手机端：将该Wifi的代（dai）理（li）选项设置为手动，主机名填写电脑的IP，端口号填写电脑端刚刚设置端口号（默认8888），保存。</li>
 <li>设置完毕，电脑端重启Fiddler，操作手机，即可在电脑端的Fiddler上看到http码流。</li>
 </ul>
-<h3 id="使用Wireshark抓包">使用Wireshark抓包</h3><p>该方法手机无须root，并且适用于各种有wifi功能的手机（IOS、Android等）、平板等。只要电脑的无线网卡具有无线承载功能，就可以。</p>
+<h3 id="使用Wireshark抓包（需要电脑携带无线网卡）">使用Wireshark抓包（需要电脑携带无线网卡）</h3><p>该方法手机无须root，并且适用于各种有wifi功能的手机（IOS、Android等）、平板等。只要电脑的无线网卡具有无线承载功能，就可以。</p>
 <ul>
 <li>把电脑的网络做为热点分享出去。</li>
 <li>手机连接电脑热点。</li>
