@@ -45,16 +45,16 @@
 
 -->
 
-<meta name="description" content="作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Windows和Linux。">
+<meta name="description" content="作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL备份与恢复">
 <meta property="og:url" content="http://cribug.github.io/2015/mysql-backup/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Windows和Linux。">
-<meta property="og:updated_time" content="2015-11-19T16:56:48.257Z">
+<meta property="og:description" content="作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。">
+<meta property="og:updated_time" content="2015-11-20T01:18:24.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL备份与恢复">
-<meta name="twitter:description" content="作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Windows和Linux。">
+<meta name="twitter:description" content="作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -225,10 +225,10 @@
       
 
       
-        <span itemprop="articleBody"><p>作为一个小码农，刚开始数据库的数据都是通过运行SQL语句来进行备份和还原了，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
+        <span itemprop="articleBody"><p>作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
 <h3 id="数据库备份">数据库备份</h3><ul>
 <li>进入MySQL的库目录（bin目录）。例如在Linux下，<code>cd /usr/local/mysql/bin</code>。</li>
-<li>利用MySQL命令导出数据库。例如，<code>mysqldump -uroot -p test &gt; test.sql</code>（导出数据库test到test.sql文件）。<br>提示输入密码时，输入该数据库用户名的密码。<br>Tip:如果导出单张表的话在数据库名后面键入表名即可。</li>
+<li>利用MySQL命令导出数据库。<code>mysqldump -uroot -p test &gt; test.sql</code>（导出数据库test到test.sql文件）。<br>提示输入密码时，输入MySQL的用户名的密码。<br>Tip:如果导出单张表的话在数据库名后面键入表名即可。</li>
 <li>备份成功。会看到文件test.sql自动生成到bin目录下。</li>
 </ul>
 <h3 id="数据库还原">数据库还原</h3><h5 id="方法一">方法一</h5><ul>
@@ -238,10 +238,12 @@
 <li>导入数据。<code>source test.sql;</code>。</li>
 </ul>
 <h5 id="方法二">方法二</h5><ul>
-<li>进入MySQL的库目录。</li>
-<li>直接导入数据。<code>mysql -u root -p itest &lt; test.sql</code>（导入test.sql文件到数据库itest）</li>
+<li>将备份得到的.sql文件放到MySQL的库目录下。</li>
+<li>然后打开命令行，直接导入数据。<code>mysql -uroot -p itest &lt; test.sql</code>（导入test.sql文件到数据库itest）。</li>
+<li>还原成功，可以到数据库中验证。</li>
 </ul>
-<h3 id="Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录">Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录</h3></span>
+<p>Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录。</p>
+</span>
       
     </div>
 
@@ -421,7 +423,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库备份"><span class="nav-number">1.</span> <span class="nav-text">数据库备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库还原"><span class="nav-number">2.</span> <span class="nav-text">数据库还原</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法一"><span class="nav-number">2.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法二"><span class="nav-number">2.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录"><span class="nav-number">3.</span> <span class="nav-text">Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库备份"><span class="nav-number">1.</span> <span class="nav-text">数据库备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库还原"><span class="nav-number">2.</span> <span class="nav-text">数据库还原</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法一"><span class="nav-number">2.0.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法二"><span class="nav-number">2.0.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
