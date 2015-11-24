@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://cribug.github.io/"/>
-  <updated>2015-11-24T09:07:45.532Z</updated>
+  <updated>2015-11-24T09:17:24.703Z</updated>
   <id>http://cribug.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://cribug.github.io/2015/UCloud-TestDataArk/"/>
     <id>http://cribug.github.io/2015/UCloud-TestDataArk/</id>
     <published>2015-11-24T03:21:18.000Z</published>
-    <updated>2015-11-24T09:07:45.532Z</updated>
+    <updated>2015-11-24T09:17:24.703Z</updated>
     <content type="html"><![CDATA[<p>上周做完UCloud的<font color="red">数据方舟</font>测试，今天写个书面的测评吧。</p>
 <h3 id="1-_介绍">1. 介绍</h3><h4 id="1-1_UCloud">1.1 UCloud</h4><p>最早看到UCloud的影子是在一个开源社区，印象最深刻的就是那个简洁的Logo。当时还在学校，对云计算这个概念不是很清楚，使用过一些产品后，才知道云计算的强大之处——<font color="#0070C2">成本低 · 安全 · 方便</font>。</p>
 <p><img src="/images/ucloud-logo.png" alt="UCloud Logo" title="UCloud Logo"></p>
@@ -93,7 +93,7 @@ SQLSTATE[HY000] [<span class="number">1049</span>] Unknown database <span class=
 <p><img src="/images/ucloud-autobak-5.png" alt="秒级备份" title="秒级备份"></p>
 <p>… … … 这次恢复花的时间稍微长点，用了15分钟。迫不及待的打开Web，观测一下，一切正常，感谢。</p>
 <p><img src="/images/ucloud-autobak-6.png" alt="秒级备份" title="秒级备份"></p>
-<h3 id="总结">总结</h3><ul>
+<h3 id="3-_总结">3. 总结</h3><ul>
 <li><p>在线实时备份，不需要暂停业务<br>刚才使用了手动备份和秒级备份进行恢复系统数据，在备份过程中，没有需要对机器进行任何暂停应用的操作，也没有造成应用的任何不适，这样的方式大大的简化了业务备份的难题，进一步可以降低互联网创业人员的难度。</p>
 </li>
 <li><p>非数据库备份，系统完全备份<br>数据方舟能完成的备份不仅仅是数据备份，像Nginx、MySQL等程序配置和系统配置，统统可以备份，可以减去人们进行服务器重新配置的烦恼。</p>
