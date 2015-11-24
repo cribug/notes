@@ -63,7 +63,7 @@
 <meta property="og:image" content="http://cribug.github.io/images/ucloud-autobak-4.png">
 <meta property="og:image" content="http://cribug.github.io/images/ucloud-autobak-5.png">
 <meta property="og:image" content="http://cribug.github.io/images/ucloud-autobak-6.png">
-<meta property="og:updated_time" content="2015-11-24T16:36:21.548Z">
+<meta property="og:updated_time" content="2015-11-24T16:44:06.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="来自UCloud的数据方舟">
 <meta name="twitter:description" content="上周做完UCloud的数据方舟测试，今天写个书面的测评吧。最早看到UCloud的影子是在一个开源社区，印象最深刻的就是那个简洁的Logo。当时还在学校，对云计算这个概念不是很清楚，使用过一些产品后，才知道云计算的强大之处——成本低 · 安全 · 方便。">
@@ -255,7 +255,7 @@
 </ul>
 <p>既然数据方舟是用来备份数据的，所以刚开始我在云主机上做了一个WEB服务配置，使用了LNMP架构（Linux + Nginx + MySQL + PHP），将MySQL的data目录放在数据盘中(/data/mysql/)，同时安装了一个流行的php框架Laravel，也放在数据盘中(/data/www/)。</p>
 <p><img src="/images/ucloud-ark-base.png" alt="基础配置" title="基础配置"></p>
-<p>下面是部署在该云主机上的WEB程序，为了使测试更直观，我为该Web程序配置了个二级域名 <a href="http://test.cribug.com" target="_blank" rel="external">http://test.cribug.com</a><br><img src="/images/ucloud-web-1.png" alt="web首页" title="web首页"></p>
+<p>下面是部署在该云主机上的WEB程序，为了使测试更直观，为该Web程序配置了二级域名。<br><img src="/images/ucloud-web-1.png" alt="web首页" title="web首页"></p>
 <p>OK！既然系统环境和程序部署完成，就可以开始测试数据方舟的功能了。</p>
 <h4 id="2-3_手动备份测试">2.3 手动备份测试</h4><p>手动备份数量上限：系统盘和数据盘各三份，如果多于三个的话，需要先把以前的一份备份删除，才能继续创建备份。</p>
 <p>我的个人认知是这样的，这里的手动备份相当于各大云厂商提供的镜像服务，手动备份的最大特点是灵活性高，适用于各种备份场景，在应用进行重大迭代之前进行手动备份是非常有必要的。</p>
