@@ -3,9 +3,9 @@
   <title><![CDATA[Cribug's Notes]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://cribug.github.io/"/>
+  <link href="http://notes.cribug.com/"/>
   <updated>2015-11-25T06:41:21.702Z</updated>
-  <id>http://cribug.github.io/</id>
+  <id>http://notes.cribug.com/</id>
   
   <author>
     <name><![CDATA[Cribug]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[来自UCloud的数据方舟]]></title>
-    <link href="http://cribug.github.io/2015/UCloud-TestDataArk/"/>
-    <id>http://cribug.github.io/2015/UCloud-TestDataArk/</id>
+    <link href="http://notes.cribug.com/2015/UCloud-TestDataArk/"/>
+    <id>http://notes.cribug.com/2015/UCloud-TestDataArk/</id>
     <published>2015-11-24T03:21:18.000Z</published>
     <updated>2015-11-25T06:41:21.702Z</updated>
     <content type="html"><![CDATA[<p>上周做完UCloud的<font color="red">数据方舟</font>测试，今天写个书面的测评吧。</p>
@@ -95,14 +95,14 @@
     
     </summary>
     
-      <category term="云计算" scheme="http://cribug.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+      <category term="云计算" scheme="http://notes.cribug.com/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[关于微信内置浏览器无法清除缓存问题]]></title>
-    <link href="http://cribug.github.io/2015/wechat-cache/"/>
-    <id>http://cribug.github.io/2015/wechat-cache/</id>
+    <link href="http://notes.cribug.com/2015/wechat-cache/"/>
+    <id>http://notes.cribug.com/2015/wechat-cache/</id>
     <published>2015-11-20T01:26:18.000Z</published>
     <updated>2015-11-20T02:00:56.571Z</updated>
     <content type="html"><![CDATA[<p>前段时间开发微信公众号过程中遇到一个很奇怪的问题，网上查了查，遇到这个蛋疼问题的不止我一个，原来是Android的微信客户端内置浏览器会缓存CSS、图片等，而且无法清理缓存，这样如果要修改样式的话，很难实时看到效果，这样给开发者设置了不小的障碍。</p>
@@ -118,14 +118,14 @@
     
     </summary>
     
-      <category term="WeChat" scheme="http://cribug.github.io/tags/WeChat/"/>
+      <category term="WeChat" scheme="http://notes.cribug.com/tags/WeChat/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[MySQL备份与恢复]]></title>
-    <link href="http://cribug.github.io/2015/mysql-backup/"/>
-    <id>http://cribug.github.io/2015/mysql-backup/</id>
+    <link href="http://notes.cribug.com/2015/mysql-backup/"/>
+    <id>http://notes.cribug.com/2015/mysql-backup/</id>
     <published>2015-11-18T10:18:18.000Z</published>
     <updated>2015-11-24T00:46:41.021Z</updated>
     <content type="html"><![CDATA[<p>作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
@@ -152,14 +152,14 @@
     
     </summary>
     
-      <category term="MySQL" scheme="http://cribug.github.io/tags/MySQL/"/>
+      <category term="MySQL" scheme="http://notes.cribug.com/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[使用Fiddler和Wireshark进行手机抓包]]></title>
-    <link href="http://cribug.github.io/2015/mobile-caught/"/>
-    <id>http://cribug.github.io/2015/mobile-caught/</id>
+    <link href="http://notes.cribug.com/2015/mobile-caught/"/>
+    <id>http://notes.cribug.com/2015/mobile-caught/</id>
     <published>2015-11-11T03:11:11.000Z</published>
     <updated>2015-11-19T16:15:53.989Z</updated>
     <content type="html"><![CDATA[<p>在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。</p>
@@ -183,7 +183,7 @@
     
     </summary>
     
-      <category term="抓包" scheme="http://cribug.github.io/tags/%E6%8A%93%E5%8C%85/"/>
+      <category term="抓包" scheme="http://notes.cribug.com/tags/%E6%8A%93%E5%8C%85/"/>
     
   </entry>
   
