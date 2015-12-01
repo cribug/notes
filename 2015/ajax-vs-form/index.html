@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="UCloud, UDataArk" />
+  <meta name="keywords" content="Ajax" />
 
 
 
@@ -43,30 +43,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.png?v=0.4.5.1" />
 
 
-<meta name="description" content="上周做完UCloud的数据方舟测试，今天写个书面的测评吧。最早看到UCloud的影子是在一个开源社区，印象最深刻的就是那个简洁的Logo。当时还在学校，对云计算这个概念不是很清楚，使用过一些产品后，才知道云计算的强大之处——成本低 · 安全 · 方便。">
+<meta name="description" content="前段时间开发微信公众号过程中遇到一个很奇怪的问题，网上查了查，遇到这个蛋疼问题的不止我一个，原来是Android的微信客户端内置浏览器会缓存css、图片等，而且无法清理缓存，这样如果要修改样式的话，很难实时看到效果，这样给开发者设置了不小的障碍。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="来自UCloud的数据方舟">
-<meta property="og:url" content="http://notes.cribug.com/2015/UCloud-TestDataArk/index.html">
+<meta property="og:title" content="用ajax取代传统的form提交的好处">
+<meta property="og:url" content="http://notes.cribug.com/2015/ajax-vs-form/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="上周做完UCloud的数据方舟测试，今天写个书面的测评吧。最早看到UCloud的影子是在一个开源社区，印象最深刻的就是那个简洁的Logo。当时还在学校，对云计算这个概念不是很清楚，使用过一些产品后，才知道云计算的强大之处——成本低 · 安全 · 方便。">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-logo.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-ark-open.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-ark-base.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-web-1.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-handbak-1.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-handbak-2.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-handbak-3.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-handbak-4.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-autobak-1.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-autobak-2.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-autobak-3.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-autobak-4.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-autobak-5.png">
-<meta property="og:image" content="http://notes.cribug.com/images/ucloud-autobak-6.png">
-<meta property="og:updated_time" content="2015-11-25T06:41:21.702Z">
+<meta property="og:description" content="前段时间开发微信公众号过程中遇到一个很奇怪的问题，网上查了查，遇到这个蛋疼问题的不止我一个，原来是Android的微信客户端内置浏览器会缓存css、图片等，而且无法清理缓存，这样如果要修改样式的话，很难实时看到效果，这样给开发者设置了不小的障碍。">
+<meta property="og:updated_time" content="2015-12-01T15:15:09.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="来自UCloud的数据方舟">
-<meta name="twitter:description" content="上周做完UCloud的数据方舟测试，今天写个书面的测评吧。最早看到UCloud的影子是在一个开源社区，印象最深刻的就是那个简洁的Logo。当时还在学校，对云计算这个概念不是很清楚，使用过一些产品后，才知道云计算的强大之处——成本低 · 安全 · 方便。">
+<meta name="twitter:title" content="用ajax取代传统的form提交的好处">
+<meta name="twitter:description" content="前段时间开发微信公众号过程中遇到一个很奇怪的问题，网上查了查，遇到这个蛋疼问题的不止我一个，原来是Android的微信客户端内置浏览器会缓存css、图片等，而且无法清理缓存，这样如果要修改样式的话，很难实时看到效果，这样给开发者设置了不小的障碍。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -76,7 +62,7 @@
   };
 </script>
 
-  <title> 来自UCloud的数据方舟 | Cribug's Notes </title>
+  <title> 用ajax取代传统的form提交的好处 | Cribug's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -202,7 +188,7 @@
           
           
             
-              来自UCloud的数据方舟
+              用ajax取代传统的form提交的好处
             
           
         </h1>
@@ -211,8 +197,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-11-24T11:21:18+08:00" content="2015-11-24">
-            2015-11-24
+          <time itemprop="dateCreated" datetime="2015-12-01T23:14:21+08:00" content="2015-12-01">
+            2015-12-01
           </time>
         </span>
 
@@ -222,8 +208,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/UCloud-TestDataArk/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/UCloud-TestDataArk/" itemprop="commentsCount"></span>
+              <a href="/2015/ajax-vs-form/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/ajax-vs-form/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -237,76 +223,14 @@
       
 
       
-        <span itemprop="articleBody"><p>上周做完UCloud的<font color="red">数据方舟</font>测试，今天写个书面的测评吧。</p>
-<h3 id="1-_介绍">1. 介绍</h3><h4 id="1-1_UCloud">1.1 UCloud</h4><p>最早看到UCloud的影子是在一个开源社区，印象最深刻的就是那个简洁的Logo。当时还在学校，对云计算这个概念不是很清楚，使用过一些产品后，才知道云计算的强大之处——<font color="#0070C2">成本低 · 安全 · 方便</font>。</p>
-<p><img src="/images/ucloud-logo.png" alt="UCloud Logo" title="UCloud Logo"></p>
-<p>随着云计算的发展，各大互联网巨头都提供有云服务，而UCloud是一家非常专业的云计算服务商，说其专业，是因为UCloud只专注于云计算，比如典型的云服务器、云数据库等。</p>
-<h4 id="1-2_UDataArk（数据方舟）">1.2 UDataArk（数据方舟）</h4><p>还记得电影《诺亚方舟：创世之旅》和《2012》里面的诺亚方舟么？其作用是保留物种不被灭绝。在计算机领域，数据就等同于物种，是非常重要的。<font color="red">数据方舟</font>是UCloud近期提供的数据备份服务，目前还处于内测阶段，我有幸提前进行了试用。</p>
-<p>数据方舟支持手工备份和<font color="red">秒级备份</font>服务。从使用感受上来说，秒级备份是亮点。各大互联网厂商都提供的云服务一般都支持手动备份（创建镜像），但是大多忽略了实时备份，然而只有实时备份才更能保证数据的完整性，秒级备份服务正是基于这点诞生的。</p>
-<h3 id="2-_使用">2. 使用</h3><h4 id="2-1_开启数据方舟">2.1 开启数据方舟</h4><p>在Ucloud上创建云主机，目前只有标准版的云主机支持数据方舟服务，SSD高性能版、网络增强机型暂时不支持数据方舟服务，相信Ucloud很快会全方位支持。</p>
-<p>在最后一步备份方案中后面打勾，才能开启这台主机的数据方舟服务。<br><img src="/images/ucloud-ark-open.png" alt="开启数据方舟" title="开启数据方舟"></p>
-<h4 id="2-2_我的云主机配置">2.2 我的云主机配置</h4><ul>
-<li>主机名：ARK</li>
-<li>机型：标准版</li>
-<li>镜像：CentOS 6.5 64bit</li>
-<li>CPU：2核</li>
-<li>内存：4G</li>
-<li>本地硬盘：<br>/dev/vda1 20GB系统盘(/)<br>/dev/vdb 20GB数据盘(/data/)</li>
-</ul>
-<p>既然数据方舟是用来备份数据的，所以刚开始我在云主机上做了一个WEB服务配置，使用了LNMP架构（Linux + Nginx + MySQL + PHP），将MySQL的data目录放在数据盘中(/data/mysql/)，同时安装了一个流行的php框架Laravel，也放在数据盘中(/data/www/)。</p>
-<p><img src="/images/ucloud-ark-base.png" alt="基础配置" title="基础配置"></p>
-<p>下面是部署在该云主机上的WEB程序，为了使测试更直观，为该Web程序配置了二级域名。<br><img src="/images/ucloud-web-1.png" alt="web首页" title="web首页"></p>
-<p>OK！既然系统环境和程序部署完成，就可以开始测试数据方舟的功能了。</p>
-<h4 id="2-3_手动备份测试">2.3 手动备份测试</h4><p>手动备份数量上限：系统盘和数据盘各三份，如果多于三个的话，需要先把以前的一份备份删除，才能继续创建备份。</p>
-<p>我的个人认知是这样的，这里的手动备份相当于各大云厂商提供的镜像服务，手动备份的最大特点是灵活性高，适用于各种备份场景，在应用进行重大迭代之前进行手动备份是非常有必要的。</p>
-<p><img src="/images/ucloud-handbak-1.png" alt="手动备份" title="手动备份"></p>
-<p>等待了大概5秒钟系统盘和数据盘备份成功。</p>
-<p><img src="/images/ucloud-handbak-2.png" alt="手动备份" title="手动备份"></p>
-<p>接下来我们可以先把Web应用的数据库删除了，看看效果。</p>
-<blockquote>
-<p>mysql&gt; show databases;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| laraveltest        |<br>| mysql              |<br>| performance_schema |<br>+——————–+<br>4 rows in set (0.00 sec)</p>
-<p>mysql&gt; drop database laraveltest;<br>Query OK, 6 rows affected (0.01 sec)</p>
-</blockquote>
-<p>现在来访问web主页，由于我使用Debug模式，页面会显示出这样的提示，意思是找不到数据库laraveltest。</p>
-<blockquote>
-<p>PDOException in Connector.php line 47:<br>SQLSTATE[HY000] [1049] Unknown database ‘laraveltest’</p>
-</blockquote>
-<p>好吧，接下来对数据盘进行恢复，来尝试一下找回我刚才弄丢的数据。<font color="red">需要有一点注意的是，可以在开机状态下备份，但是不能在开机状态下还原数据，需要将主机关闭后进行恢复，以保证数据的准确性</font>。</p>
-<p><img src="/images/ucloud-handbak-3.png" alt="手动备份" title="手动备份"></p>
-<p>关闭主机，选择按备份恢复，对我们刚才的备份的数据盘进行恢复。<br><img src="/images/ucloud-handbak-4.png" alt="手动备份" title="手动备份"></p>
-<p>数据盘恢复比较快，1分钟左右就会好了，然后启动服务器。查看Web主页，显示正常。查看数据库，刚才被删除的laraveltest数据库已经恢复正常。</p>
-<blockquote>
-<p>mysql&gt; show databases;<br>+——————–+<br>| Database           |<br>+——————–+<br>| information_schema |<br>| <font color="red">laraveltest</font>        |<br>| mysql              |<br>| performance_schema |<br>+——————–+<br>4 rows in set (0.00 sec)</p>
-</blockquote>
-<h4 id="2-4_秒级备份测试">2.4 秒级备份测试</h4><p>我认为秒级恢复是数据方舟最赞的部分，一是因为其开发技术要求肯定要高，二是可以给使用人员带来不少的便捷。秒级服务提供的具体内容如下：</p>
-<ul>
-<li>12小时内的任意时间，精确到秒哦</li>
-<li>24小时内的任意整点</li>
-<li>3天内的0点时刻</li>
-</ul>
-<p>由于我上周就进行了使用，所以这里积攒了些秒级备份的数据。</p>
-<p><img src="/images/ucloud-autobak-1.png" alt="秒级备份" title="秒级备份"><br><img src="/images/ucloud-autobak-2.png" alt="秒级备份" title="秒级备份"></p>
-<h5 id="2-4-1_秒级备份测试一">2.4.1 秒级备份测试一</h5><p>接下来把系统盘和数据盘都恢复到三天前，看看当时的Web界面是什么样子的。</p>
-<p>关闭主机——&gt;恢复——&gt;按备份恢复<br><img src="/images/ucloud-autobak-3.png" alt="秒级备份" title="秒级备份"></p>
-<p>经过4分钟，系统盘和数据盘全部还原成功，开机，来一睹三天前的Web界面吧（Laravel的初始化界面）。<br><img src="/images/ucloud-autobak-4.png" alt="秒级备份" title="秒级备份"></p>
-<h5 id="2-4-2_秒级备份测试二">2.4.2 秒级备份测试二</h5><p>这个时候，如果我使用rm把 整个磁盘删除了，还不能不能恢复成功呢？再次选择使用秒级备份，把数据恢复到今天中午时刻，观测一下是否能够成功。</p>
-<blockquote>
-<p>[root@10-10-31-119 ~]# rm -rf / --no-preserve-root</p>
-</blockquote>
-<p>尽管有Ucloud的数据方舟，但当我rm整个磁盘的时候，脑袋还是嗡的一下，有点晕，原谅我的承受力有点低吧（主要以前丢数据丢的有点怕了）。现在将服务器断电（由于删除了整个系统，无法正常关机），使用秒级备份，把数据恢复到今天中午13:03:34（随机敲的）</p>
-<p><img src="/images/ucloud-autobak-5.png" alt="秒级备份" title="秒级备份"></p>
-<p>… … … 这次恢复花的时间稍微长点，用了15分钟。迫不及待的打开Web，观测一下，谢天谢地，一切正常。</p>
-<p><img src="/images/ucloud-autobak-6.png" alt="秒级备份" title="秒级备份"></p>
-<h3 id="3-_总结">3. 总结</h3><p>对数据方舟的测试，断断续续用了一周的时间，在这个过程中，与数据方舟的研发人员进行过沟通，对数据方舟这款产品有了一定的理解，并且就一些细节问题进行反馈，发现数据方舟的研发团队的执行力相当高，很多问题都会当天解决，向数据方舟的研发团队致敬。下面是我对数据方舟这款产品的总结。</p>
-<ul>
-<li><p><font color="#0070C2">灵活的手动备份 + 秒级的自动备份</font><br>手动备份适用于各种场景，灵活方便。但是在一些时候手贱地误删了一些东西，而上次手动备份到刚才之间的时间段，增加存在一些很重要的数据，如果使用手动备份，会将这段时间的数据丢掉，我们可以使用秒级备份恢复到误操作的前几秒，既避免了数据的丢失，还解决的手贱造成的问题，相当吃了一次后悔药。</p>
-</li>
-<li><p><font color="#0070C2">在线实时备份，不需要暂停业务</font><br>刚才使用了手动备份和秒级备份进行恢复系统数据，在备份过程中，没有需要对机器进行任何暂停应用的操作，也没有造成应用的任何不适，这样的方式大大的简化了业务备份的难题，进一步可以降低互联网创业人员的难度。</p>
-</li>
-<li><p><font color="#0070C2">控制台操作</font><br>一旦服务器应用出问题，即便不是专业的运维人员，也能通过控制台将应用恢复到最近没有出错的时刻（得益于超赞的自动备份）。</p>
-</li>
-</ul>
-</span>
+        <span itemprop="articleBody"><p>前段时间开发微信公众号过程中遇到一个很奇怪的问题，网上查了查，遇到这个蛋疼问题的不止我一个，原来是Android的微信客户端内置浏览器会缓存CSS、图片等，而且无法清理缓存，这样如果要修改样式的话，很难实时看到效果，这样给开发者设置了不小的障碍。</p>
+<p>有人是这样处理的，到手机的设置里，找到应用程序微信，然后清理数据。清理数据，聊天数据也没有了，难道作为开发者就要这么苦逼吗？</p>
+<p>我认为最好的办法是这样的，在.css文件路径后面加上一个随机数。真是豁然开朗啊！</p>
+<p>PHP代码</p>
+<pre><code><span class="variable">$rand</span> = rand(<span class="number">0</span>,<span class="number">9999</span>);
+</code></pre><p>html代码</p>
+<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"style.css?rand=<span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$rand</span>; <span class="preprocessor">?&gt;</span></span>"</span>/&gt;</span>
+</code></pre></span>
       
     </div>
 
@@ -314,7 +238,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/云计算/" rel="tag">#云计算</a>
+            <a href="/tags/Ajax/" rel="tag">#Ajax</a>
           
         </div>
       
@@ -323,13 +247,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/ajax-vs-form/" rel="prev">用ajax取代传统的form提交的好处</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/wechat-cache/" rel="next">关于微信内置浏览器无法清除缓存问题</a>
+              <a href="/2015/UCloud-TestDataArk/" rel="next">来自UCloud的数据方舟</a>
             
           </div>
         </div>
@@ -344,10 +266,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/UCloud-TestDataArk/"
-     data-title="来自UCloud的数据方舟"
+        <div class="ds-share flat" data-thread-key="2015/ajax-vs-form/"
+     data-title="用ajax取代传统的form提交的好处"
      data-content=""
-     data-url="http://notes.cribug.com/2015/UCloud-TestDataArk/">
+     data-url="http://notes.cribug.com/2015/ajax-vs-form/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -373,8 +295,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/UCloud-TestDataArk/"
-                   data-title="来自UCloud的数据方舟" data-url="http://notes.cribug.com/2015/UCloud-TestDataArk/">
+              <div class="ds-thread" data-thread-key="2015/ajax-vs-form/"
+                   data-title="用ajax取代传统的form提交的好处" data-url="http://notes.cribug.com/2015/ajax-vs-form/">
               </div>
             
           </div>
@@ -481,7 +403,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_介绍"><span class="nav-number">1.</span> <span class="nav-text">1. 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1_UCloud"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 UCloud</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2_UDataArk（数据方舟）"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 UDataArk（数据方舟）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_使用"><span class="nav-number">2.</span> <span class="nav-text">2. 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1_开启数据方舟"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 开启数据方舟</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2_我的云主机配置"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 我的云主机配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3_手动备份测试"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 手动备份测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4_秒级备份测试"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 秒级备份测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-1_秒级备份测试一"><span class="nav-number">2.4.1.</span> <span class="nav-text">2.4.1 秒级备份测试一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-2_秒级备份测试二"><span class="nav-number">2.4.2.</span> <span class="nav-text">2.4.2 秒级备份测试二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_总结"><span class="nav-number">3.</span> <span class="nav-text">3. 总结</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
