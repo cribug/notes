@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2015-12-01T15:15:09.251Z</updated>
+  <updated>2015-12-02T03:45:22.596Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -15,21 +15,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[用ajax取代传统的form提交的好处]]></title>
+    <title><![CDATA[用Ajax取代传统的Form提交的好处]]></title>
     <link href="http://notes.cribug.com/2015/ajax-vs-form/"/>
     <id>http://notes.cribug.com/2015/ajax-vs-form/</id>
     <published>2015-12-01T15:14:21.000Z</published>
-    <updated>2015-12-01T15:15:09.251Z</updated>
-    <content type="html"><![CDATA[<p>前段时间开发微信公众号过程中遇到一个很奇怪的问题，网上查了查，遇到这个蛋疼问题的不止我一个，原来是Android的微信客户端内置浏览器会缓存CSS、图片等，而且无法清理缓存，这样如果要修改样式的话，很难实时看到效果，这样给开发者设置了不小的障碍。</p>
-<p>有人是这样处理的，到手机的设置里，找到应用程序微信，然后清理数据。清理数据，聊天数据也没有了，难道作为开发者就要这么苦逼吗？</p>
-<p>我认为最好的办法是这样的，在.css文件路径后面加上一个随机数。真是豁然开朗啊！</p>
-<p>PHP代码</p>
-<pre><code><span class="variable">$rand</span> = rand(<span class="number">0</span>,<span class="number">9999</span>);
-</code></pre><p>html代码</p>
-<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"style.css?rand=<span class="php"><span class="preprocessor">&lt;?php</span> <span class="keyword">echo</span> <span class="variable">$rand</span>; <span class="preprocessor">?&gt;</span></span>"</span>/&gt;</span>
-</code></pre>]]></content>
+    <updated>2015-12-02T03:45:22.596Z</updated>
+    <content type="html"><![CDATA[<p>开发的过程中，总会遇到各种各样的小问题。有的问题是由于个人失误造成的，需要去修正，而有的是因为决策原因，需要换条思路去解决。一般我们在实现页面局部刷新的时候使用Ajax，表单递交的时候使用传统的Form递交，但是表单递交如果使用Ajax的话，也许会有更好的用户体验。</p>
+<ul>
+<li>数据提交页面不会闪屏</li>
+<li>页面局部更新速度快</li>
+<li>网络带宽占用低</li>
+</ul>
+<p>传统模式下，表单提交整个页面重绘，为了维持页面用户对表单的状态改变，要多写不少代码。 要在控制器和模板之间传递更多参数以保持页面状态。而AJAX不然，数据提交页面不会白屏，因为页面只是局部更新， 不关心也不会影响页面其他部分的内容。</p>
+]]></content>
     <summary type="html">
-    <![CDATA[前段时间开发微信公众号过程中遇到一个很奇怪的问题，网上查了查，遇到这个蛋疼问题的不止我一个，原来是Android的微信客户端内置浏览器会缓存css、图片等，而且无法清理缓存，这样如果要修改样式的话，很难实时看到效果，这样给开发者设置了不小的障碍。]]>
+    <![CDATA[开发的过程中，总会遇到各种各样的小问题。有的问题是由于个人失误造成的，需要去修正，而有的是因为决策原因，需要换条思路去解决。一般我们在实现页面局部刷新的时候使用Ajax，表单递交的时候使用传统的Form递交，但是表单递交如果使用Ajax的话，也许会有更好的用户体验。]]>
     
     </summary>
     
