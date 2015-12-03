@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2015-12-02T03:45:22.596Z</updated>
+  <updated>2015-12-03T15:18:19.625Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -15,9 +15,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[用Ajax取代传统的Form提交的好处]]></title>
+    <title><![CDATA[防止Ajax重复递交]]></title>
     <link href="http://notes.cribug.com/2015/ajax-vs-form/"/>
     <id>http://notes.cribug.com/2015/ajax-vs-form/</id>
+    <published>2015-12-03T12:14:43.000Z</published>
+    <updated>2015-12-03T15:18:19.625Z</updated>
+    <content type="html"><![CDATA[<p>一个简易的需求，点一个按钮，则向服务器请求资源，不作处理时，多次点击后会有很多个请求在等待。粗暴的解决方式是点一次就将按钮disable掉。请问一下有没有更好的办法，比如多点一次后自动down掉前一次请求？补充：不是一次请求，更类似于gmail的全站AJAX，刚用firebug看了一下gmail，发现重复请求时，之前的请求状态变为“Aborted”，并且不反回任何数据。请问是如何做到的呢？毕竟一般理解客户端AJAX发送后是不能终止的。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>一个简易的需求，点一个按钮，则向服务器请求资源，不作处理时，多次点击后会有很多个请求在等待。粗暴的解决方式是点一次就将按钮disable掉。请问一下有没有更好的办法，比如多点一次后自动down掉前一次请求？补充：不是一次请求，更类似于gmail的全站AJAX，刚用fireb]]>
+    </summary>
+    
+      <category term="Ajax" scheme="http://notes.cribug.com/tags/Ajax/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[用Ajax取代传统的Form提交的好处]]></title>
+    <link href="http://notes.cribug.com/2015/prevent-repeat-ajax/"/>
+    <id>http://notes.cribug.com/2015/prevent-repeat-ajax/</id>
     <published>2015-12-01T15:14:21.000Z</published>
     <updated>2015-12-02T03:45:22.596Z</updated>
     <content type="html"><![CDATA[<p>开发的过程中，总会遇到各种各样的小问题。有的问题是由于个人失误造成的，需要去修正，而有的是因为决策原因，需要换条思路去解决。一般我们在实现页面局部刷新的时候使用Ajax，表单递交的时候使用传统的Form递交，但是表单递交如果使用Ajax的话，也许会有更好的用户体验。</p>

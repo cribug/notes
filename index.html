@@ -190,7 +190,7 @@
           
             
               <a class="post-title-link" href="/2015/ajax-vs-form/" itemprop="url">
-                用Ajax取代传统的Form提交的好处
+                防止Ajax重复递交
               </a>
             
           
@@ -200,8 +200,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-12-01T23:14:21+08:00" content="2015-12-01">
-            2015-12-01
+          <time itemprop="dateCreated" datetime="2015-12-03T20:14:43+08:00" content="2015-12-03">
+            2015-12-03
           </time>
         </span>
 
@@ -227,9 +227,87 @@
 
       
         
+          <span itemprop="articleBody">
+            
+            一个简易的需求，点一个按钮，则向服务器请求资源，不作处理时，多次点击后会有很多个请求在等待。粗暴的解决方式是点一次就将按钮disable掉。请问一下有没有更好的办法，比如多点一次后自动down掉前一次请求？补充：不是一次请求，更类似于gmail的全站AJAX，刚用firebug看了一下gmail，发现重复请求时，之前的请求状态变为“Aborted”，并且不反回任何数据。请问是如何做到的呢？毕竟一般理解客户端AJAX发送后是不能终止的。
+
+            
+          </span>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2015/ajax-vs-form/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/prevent-repeat-ajax/" itemprop="url">
+                用Ajax取代传统的Form提交的好处
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-12-01T23:14:21+08:00" content="2015-12-01">
+            2015-12-01
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/prevent-repeat-ajax/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/prevent-repeat-ajax/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
           <span itemprop="description">开发的过程中，总会遇到各种各样的小问题。有的问题是由于个人失误造成的，需要去修正，而有的是因为决策原因，需要换条思路去解决。一般我们在实现页面局部刷新的时候使用Ajax，表单递交的时候使用传统的Form递交，但是表单递交如果使用Ajax的话，也许会有更好的用户体验。</span>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2015/ajax-vs-form/">
+            <a class="btn" href="/2015/prevent-repeat-ajax/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -577,7 +655,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
