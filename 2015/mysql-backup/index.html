@@ -49,7 +49,7 @@
 <meta property="og:url" content="http://notes.cribug.com/2015/mysql-backup/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
 <meta property="og:description" content="作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。">
-<meta property="og:updated_time" content="2015-11-24T00:46:41.021Z">
+<meta property="og:updated_time" content="2015-12-20T17:11:38.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL备份与恢复">
 <meta name="twitter:description" content="作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。">
@@ -223,7 +223,9 @@
       
 
       
-        <span itemprop="articleBody"><p>作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
+        <span itemprop="articleBody"><p>作者: <a href="http://cribug.com/" target="_blank" rel="external">Cribug</a><br>本文地址: <a href="http://notes.cribug.com/2015/mysql-backup/">http://notes.cribug.com/2015/mysql-backup/</a><br>转载请注明出处</p>
+<hr>
+<p>作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
 <h3 id="数据库备份">数据库备份</h3><ul>
 <li>进入MySQL的库目录（bin目录）。例如在Linux下，<code>cd /usr/local/mysql/bin</code>。</li>
 <li>利用MySQL命令导出数据库。<code>mysqldump -uroot -p test &gt; test.sql</code>（导出数据库test到test.sql文件）。<br>提示输入密码时，输入MySQL的用户名的密码。<br>Tip:如果导出单张表的话在数据库名后面键入表名即可。</li>
@@ -439,7 +441,7 @@
 
 <div class="theme-info">
   Theme by
-  next
+  NexT
   <!--
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT
