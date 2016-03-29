@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-03-29T14:16:06.330Z</updated>
+  <updated>2016-03-29T14:43:32.426Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://notes.cribug.com/2016/TCC2016/"/>
     <id>http://notes.cribug.com/2016/TCC2016/</id>
     <published>2016-03-29T09:47:26.000Z</published>
-    <updated>2016-03-29T14:16:06.330Z</updated>
+    <updated>2016-03-29T14:43:32.426Z</updated>
     <content type="html"><![CDATA[<p>利用周末的空闲时间，去参加了由极客邦举办的<font color="#0070C2">技术社群大会</font>，见证了一场由IOS大牛唐巧引起的粉丝见面会。啥？你问什么叫粉丝见面会？参会人员一般以上都是冲着唐巧去的，而且纷纷合照留念，这不叫粉丝见面会么？然而我并不是IOS开发者 <strong>:)</strong>。转为正题，这次大会的质量还是非常高滴，虽说是社群大会，但是大多数来的都是技术人员，极少数是运营人员。</p>
 <p><img src="/images/TCC2016.png" alt="TCC Logo" title="TCC Logo"></p>
 <p>对于开发者来说，这样的大会虽然不能短时间提升你的技术能力，但能让你体会到一场盛大的技术盛宴，对于开拓视野还是不错滴。大会的演讲嘉宾太多，我就讲讲印象最深的两个人吧，一个是IOS明星唐巧小哥，一个是PHP明星鸟哥。</p>
@@ -77,7 +77,7 @@
     
     </summary>
     
-      <category term="云计算" scheme="http://notes.cribug.com/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/"/>
+      <category term="技术大会" scheme="http://notes.cribug.com/tags/%E6%8A%80%E6%9C%AF%E5%A4%A7%E4%BC%9A/"/>
     
   </entry>
   
