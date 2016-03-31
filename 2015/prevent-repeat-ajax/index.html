@@ -49,7 +49,7 @@
 <meta property="og:url" content="http://notes.cribug.com/2015/prevent-repeat-ajax/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
 <meta property="og:description" content="遇到了这样一个问题，使用ajax进行表单递交，如果网络不好，不能及时响应，能重复点击submit按钮，会不断的向服务器递交数据，导致重复递交同样的数据。">
-<meta property="og:updated_time" content="2016-03-30T15:56:29.280Z">
+<meta property="og:updated_time" content="2016-03-30T16:22:07.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="防止Ajax重复递交">
 <meta name="twitter:description" content="遇到了这样一个问题，使用ajax进行表单递交，如果网络不好，不能及时响应，能重复点击submit按钮，会不断的向服务器递交数据，导致重复递交同样的数据。">
@@ -219,6 +219,7 @@
 <li>外部变量锁定 - 放个全局变量，只要发了Ajax请求，变量为false，收到结果就变回true。每次发请求的时候检测这个变量，假如为false就不能发Ajax。</li>
 </ul>
 <p>当然不推荐这两种方式。</p>
+<p>参考资料：<a href="http://www.zhihu.com/question/19805411" target="_blank" rel="external">http://www.zhihu.com/question/19805411</a></p>
 </span>
       
     </div>
@@ -308,7 +309,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
