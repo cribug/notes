@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-03-31T15:56:26.734Z</updated>
+  <updated>2016-03-31T15:59:44.284Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -15,17 +15,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title><![CDATA[PHP使用正则表达式匹配汉字的正确姿势]]></title>
     <link href="http://notes.cribug.com/2016/RegEx-Han/"/>
     <id>http://notes.cribug.com/2016/RegEx-Han/</id>
-    <published>2016-03-31T15:56:26.734Z</published>
-    <updated>2016-03-31T15:56:26.734Z</updated>
-    <content type="html"><![CDATA[<p>title: PHP使用正则表达式匹配汉字的正确姿势<br>layout: post<br>date: 2016-03-30 21:32:44<br>comments: true<br>tags: RegEx<br>keywords: RegEx, 正则表达式，Unicode<br>description: 占位</p>
-<p>占位</p>
+    <published>2016-03-30T13:32:44.000Z</published>
+    <updated>2016-03-31T15:59:44.284Z</updated>
+    <content type="html"><![CDATA[<p>占位</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>title: PHP使用正则表达式匹配汉字的正确姿势<br>layout: post<br>date: 2016-03-30 21:32:44<br>comments: true<br>tags: RegEx<br>keywords: RegEx, 正则表达式，Unicod]]>
+    <![CDATA[占位]]>
+    
     </summary>
+    
+      <category term="RegEx" scheme="http://notes.cribug.com/tags/RegEx/"/>
     
   </entry>
   
