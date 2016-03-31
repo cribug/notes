@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-03-31T15:59:44.284Z</updated>
+  <updated>2016-03-31T18:14:37.684Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -15,15 +15,67 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[PHP使用正则表达式匹配汉字的正确姿势]]></title>
+    <title><![CDATA[推荐一些 PHP 学习资料]]></title>
+    <link href="http://notes.cribug.com/2016/Learn-PHP/"/>
+    <id>http://notes.cribug.com/2016/Learn-PHP/</id>
+    <published>2016-03-31T15:11:42.000Z</published>
+    <updated>2016-03-31T18:14:37.684Z</updated>
+    <content type="html"><![CDATA[<h3 id="文档">文档</h3><blockquote>
+<p>目前网络上充斥着大量的过时资讯，让 PHP 新手误入歧途，并且传播着错误的实践以及不安全的代码。《 PHP 之道》收集了现有的 PHP 最佳实践、编码规范和权威学习指南，方便 PHP 开发者阅读和查找。</p>
+</blockquote>
+<p><a href="http://www.phptherightway.com/" target="_blank"><img src="http://www.phptherightway.com/images/banners/leaderboard-728x90.png" alt="PHP: The Right Way"></a></p>
+<p>我刚开始学习的 PHP 资料，是网上下载的某培训机构2013年的培训视频，视频内容使用的 PHP 版本是 5.3.* 。由于使用的学习资料过时，导致我半年之后才知道 PHP 有“命名空间”这东西。虽然说网络是个好东西，但是里面充斥着太多的杂乱信息。技术虽然快速发展，但是信息还是存在着不对称，比如在国外火了一年多的技术，国内才逐渐火起来。</p>
+<p>多年之后，我发现了一个好东西，可以解决学习 PHP 的困扰，《 PHP 之道》向 PHP 新手介绍一些他们没有发现或者是太晚发现的主题，或是经验丰富的专业人士已经实践已久的做法提供一些新想法。当有更多有用的资讯以及范例时，<font color="red">《 PHP 之道》</font>会随着相关技术的发展而持续更新。</p>
+<p>推荐，跟我一样英语不过关的同学，观看英文手册。（可以一边学习英语，一边学习技术，说不定以后要看的英文文档的机会还有很多呢）</p>
+<ul>
+<li>English: <a href="http://www.phptherightway.com/" target="_blank" rel="external">http://www.phptherightway.com/</a></li>
+<li>中文版: <a href="http://laravel-china.github.io/php-the-right-way/" target="_blank" rel="external">http://laravel-china.github.io/php-the-right-way/</a></li>
+</ul>
+<p>如果需要工具文档的话，<font color="red">官方文档</font>是最好的工具书，没有之一，无论是内容还是翻译排版等，都是上乘之作，尤其手册可以像论坛一样，递交笔记和查看他人的笔记，从中应该能得到些技术点吧！</p>
+<ul>
+<li>English: <a href="http://php.net/manual/en/" target="_blank" rel="external">http://php.net/manual/en/</a></li>
+<li>中文版: <a href="http://php.net/manual/zh/" target="_blank" rel="external">http://php.net/manual/zh/</a></li>
+</ul>
+<h3 id="书籍">书籍</h3><p>另外推荐两本书，PHP 工程师进阶所需。</p>
+<p><font color="red">《深入PHP：面向对象、模式与实践（第3版）》</font>，PHP专家赞德斯经典力作，主要讲解面向对象、设计模式和一些工具的使用等。</p>
+<p><font color="red">《 Modern PHP 》</font>的作者也是《 PHP 之道》的发起人 Josh Lockhart。书中覆盖面很广，从“命名空间”、“闭包”等，讲到最佳实践，也有composer 、psr 等最新标准规范，适合有一定 PHP 开发经验的人阅读。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[目前网络上充斥着大量的过时资讯，让 PHP 新手误入歧途，并且传播着错误的实践以及不安全的代码。PHP之道收集了现有的 PHP 最佳实践、编码规范和权威学习指南，方便 PHP 开发者阅读和查找。]]>
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://notes.cribug.com/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[PHP 正则匹配汉字的正确姿势]]></title>
     <link href="http://notes.cribug.com/2016/RegEx-Han/"/>
     <id>http://notes.cribug.com/2016/RegEx-Han/</id>
     <published>2016-03-30T13:32:44.000Z</published>
-    <updated>2016-03-31T15:59:44.284Z</updated>
-    <content type="html"><![CDATA[<p>占位</p>
+    <updated>2016-03-31T19:17:46.053Z</updated>
+    <content type="html"><![CDATA[<p>一直以来，正则匹配汉字都是个坑，网上搜索出来的 <font color="blue">Unicode码段</font>匹配都不怎么好用。前几天在一个技术群里，看到了一个大牛给出了个不错的解决方案。</p>
+<p>下面是我Get到的新技能：</p>
+<pre><code><span class="regexp">/\p{Han}/u</span>
+</code></pre><p>以前从来没见过这样的正则（原谅我的无知吧）。<code>\p{Han}</code> 代表汉语（中文字符），<code>u</code>模式修饰符表示被匹配的字符串是utf-8的（传说中的开启Unicode模式？）。<font color="red">这个正则只适合于 “开启Unicode模式的PHP” 和 “1.9以上版本Ruby” 。</font></p>
+<p>实践出真知：</p>
+<pre><code>&lt;?php
+    <span class="variable">$value</span>=<span class="string">"迷麟--灵山王"</span>;
+    preg_match(<span class="string">'/^(\p{Han}){2}/u'</span>, <span class="variable">$value</span>, <span class="variable">$result</span>);
+    print_r(<span class="variable">$result</span>);
+?&gt;
+</code></pre><p>输出为：</p>
+<pre><code><span class="keyword">Array</span>
+(
+    [<span class="number">0</span>] =&gt; 迷麟
+    [<span class="number">1</span>] =&gt; 麟
+)
+</code></pre><p>参考资料：<br>正则表达式：Unicode诸问题：<a href="http://www.infoq.com/cn/news/2011/03/regular-expressions-unicode-2" target="_blank" rel="external">http://www.infoq.com/cn/news/2011/03/regular-expressions-unicode-2</a><br>模式修饰符：<a href="http://php.net/manual/zh/reference.pcre.pattern.modifiers.php" target="_blank" rel="external">http://php.net/manual/zh/reference.pcre.pattern.modifiers.php</a></p>
+<p>欢迎大家学习交流。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[占位]]>
+    <![CDATA[一直以来，正则匹配汉字都是个坑，网上搜索出来的 <font color="blue">Unicode码段</font>匹配都不怎么好用。前几天在一个技术群里，看到了一个大牛给出了个不错的解决方案。]]>
     
     </summary>
     
