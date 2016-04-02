@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-03-31T18:14:37.684Z</updated>
+  <updated>2016-04-02T07:13:54.012Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,6 +13,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux 命令之 scp]]></title>
+    <link href="http://notes.cribug.com/2016/linux-scp/"/>
+    <id>http://notes.cribug.com/2016/linux-scp/</id>
+    <published>2016-04-02T05:26:33.000Z</published>
+    <updated>2016-04-02T07:13:54.012Z</updated>
+    <content type="html"><![CDATA[<p>之前迁移服务器站点和数据的时候，我能想到的唯一办法是使用 ftp 工具将程序和数据库打包下载来，然后再使用 ftp 工具上传到另外一台服务器。这样的解决方案很浪费时间，经过同事介绍，使用 Linux 下的 scp 工具很容易的去完成服务器迁移工作，看来我这个半吊子程序员做运维还是不行滴 :)。。</p>
+<p>scp 基于 ssh 登录，将当前主机文件 upload 给远程主机，或者将远程主机的文件 download 到当前操作主机。</p>
+<h3 id="当前主机文件_upload_给远程主机">当前主机文件 upload 给远程主机</h3><p>复制文件    </p>
+<pre><code><span class="preprocessor"># 将本地的 /var/data.tar.gz 文件上传到 <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span> 服务器的 data 目录下</span>
+<span class="preprocessor"># 文件名不变，命令执行后需要输入远程主机的 root 用户密码</span>
+scp /var/data.tar.gz root@<span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span>:/data/
+
+<span class="preprocessor"># 将本地的 /var/data.tar.gz 文件上传到 <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span> 服务器的 data 目录下</span>
+<span class="preprocessor"># 文件名变为 upload.tar.gz，命令执行后需要输入远程主机的 root 用户密码</span>
+scp /var/data.tar.gz root@<span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span>:/data/upload.tar.gz
+
+<span class="preprocessor"># 将本地的 /var/data.tar.gz 文件上传到 <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span> 服务器的 data 目录下</span>
+<span class="preprocessor"># 文件名不变，命令执行后需要输入远程主机的用户名字的密码</span>
+scp /var/data.tar.gz <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span>:/data/
+
+<span class="preprocessor"># 将本地的 /var/data.tar.gz 文件上传到 <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span> 服务器的 data 目录下</span>
+<span class="preprocessor"># 文件名变为 upload.tar.gz，命令执行后需要输入远程主机的用户名和密码</span>
+scp /var/data.tar.gz <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span>:/data/upload.tar.gz
+</code></pre><p>复制目录</p>
+<pre><code><span class="preprocessor"># 将本地的 /var/log 目录上传到 <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span> 服务器的 data 目录下</span>
+<span class="preprocessor"># 即远程主机产生 /data/log/ 目录，命令执行后需要输入远程主机的 root 用户密码</span>
+scp -r /var/<span class="built_in">log</span>/ root@<span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span>:/data/
+
+<span class="preprocessor"># 将本地的 /var/log 目录上传到 <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span> 服务器的 data 目录下</span>
+<span class="preprocessor"># 即远程主机产生 /data/log/ 目录，命令执行后需要输入远程主机的 root 用户密码</span>
+scp -r /var/<span class="built_in">log</span>/ <span class="number">222.222</span><span class="number">.222</span><span class="number">.222</span>:/data/
+</code></pre><h3 id="远程主机文件_download_到当前主机文件">远程主机文件 download 到当前主机文件</h3><p>只要将上面<font color="red">《当前主机文件 upload 给远程主机》</font>的后面两个参数（本地目录和远程目录）调换顺序就好，例如：</p>
+<pre><code><span class="comment"># 将远程主机的 data.tar.gz 文件下载到本地 /var/ 目录下</span>
+<span class="comment"># 文件名不变，命令执行后需要输入远程主机的 root 用户密码</span>
+scp root<span class="variable">@222</span>.<span class="number">222.222</span>.<span class="number">222</span><span class="symbol">:/data/data</span>.tar.gz /var/
+
+
+<span class="comment"># 将远程主机的 /var/log/ 目录下载到当前主机的 data 目录下</span>
+<span class="comment"># 即本地主机产生 /data/log/ 目录，命令执行后需要输入远程主机的 root 用户密码</span>
+scp -r <span class="number">222.222</span>.<span class="number">222.222</span><span class="symbol">:/var/log/</span> /data/
+</code></pre><h3 id="其他">其他</h3><p>如果远程主机的默认 SSH 端口被改的话，可以使用 <code>-p</code> 参数，例如：</p>
+<pre><code>scp -p <span class="number">22001</span> root<span class="variable">@222</span>.<span class="number">222.222</span>.<span class="number">222</span><span class="symbol">:/data/data</span>.tar.gz /var/
+</code></pre><p>还有一些其他参数， <code>-v</code>（显示进度）、 <code>-4</code>（使用 IPV4 地址）， <code>-6</code>（使用 IPV6 地址）。</p>
+<p>在使用 scp 的过程中，注意所使用的用户是否具有可读取远程服务器相应文件的权限。</p>
+<p>如果你使用的是 <code>OS X</code> 系统或者 <code>Linux</code> 系统，还可以实现本地的文件上传，下载等功能。如果是 <code>windows</code> 系统的话，我没折腾过，大家可以试试。</p>
+<p>Linux 之间传输文件的其他方式：</p>
+<ul>
+<li>一台主机安装 ftp Server，另外一台使用ftp的Client程序。</li>
+<li>采用samba服务。</li>
+<li>将文件放到 Web 目录下，另外一台进行 <code>wget</code> 下载（我能想到的只有这么多了）。</li>
+</ul>
+<p>前两方式我没试过，不保证很简单。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[之前迁移服务器站点和数据的时候，我能想到唯一的办法是使用 ftp 工具将程序和数据库打包下载来，然后再使用 ftp 工具上传到另外一台服务器。这样的解决方案很浪费时间，经过同事介绍，使用 Linux 下的 scp 工具很容易的去完成服务器迁移工作，看来我这个半吊子程序员做运维还是不行滴 :)。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[推荐一些 PHP 学习资料]]></title>
