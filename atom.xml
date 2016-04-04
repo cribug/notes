@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-02T07:13:54.012Z</updated>
+  <updated>2016-04-04T17:54:10.939Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,6 +13,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GitLab的安装]]></title>
+    <link href="http://notes.cribug.com/2016/gitlab-start/"/>
+    <id>http://notes.cribug.com/2016/gitlab-start/</id>
+    <published>2016-04-04T15:02:11.000Z</published>
+    <updated>2016-04-04T17:54:10.939Z</updated>
+    <content type="html"><![CDATA[<p>在阿里云上折腾了一天的 GitLab ，编译安装时各种被墙，无法正常安装，最后使用了官网的rpm包安装方式解决了问题。</p>
+<blockquote>
+<p>GitLab的两种安装方法:</p>
+<p><font color="blue">编译安装</font><br>优点：可定制性强。数据库既可以选择MySQL,也可以选择PostgreSQL;服务器既可以选择Apache，也可以选择Nginx。<br>缺点：国外的源不稳定，被墙时，依赖软件包难以下载。配置流程繁琐、复杂，容易出现各种各样的问题。依赖关系多，不容易管理，卸载GitLab相对麻烦。</p>
+<p><font color="blue">通过rpm包安装</font><br>优点：安装过程简单，安装速度快。采用rpm包安装方式，安装的软件包便于管理。<br>缺点：数据库默认采用PostgreSQL，服务器默认采用Nginx，不容易定制。</p>
+</blockquote>
+<h3 id="安装_GitLab">安装 GitLab</h3><p>进入进入<a href="https://about.gitlab.com/downloads/" target="_blank">gitlab官方网站</a>，选择对应的操作系统 — CentOS 6 (and RedHat/Oracle/Scientific Linux 6)，按照官方提示进行安装。</p>
+<p>1.安装配置必要的依赖。在Centos 6 和 7 中，以下的命令将会打开HTTP和SSH在系统防火墙中的可访问权限。</p>
+<pre><code>sudo yum <span class="operator"><span class="keyword">install</span> curl openssh-<span class="keyword">server</span> openssh-clients postfix cronie
+sudo service postfix <span class="keyword">start</span>
+sudo chkconfig postfix <span class="keyword">on</span>
+sudo lokkit -s <span class="keyword">http</span> -s ssh</span>
+</code></pre><p>2.由于在线安装脚本内容被墙，可以在服务器上搭建个shadowsocks客户端进行安装（又需要稍微折腾一下）。</p>
+<pre><code>curl -sS http<span class="variable">s:</span>//packages.gitlab.<span class="keyword">com</span>/install/repositories/gitlab/gitlab-<span class="keyword">ce</span>/script.rpm.<span class="keyword">sh</span> | sudo bash
+sudo yum install gitlab-<span class="keyword">ce</span>
+</code></pre><p>或者将安装包下载在本地，然后通过scp或者ftp再上传到服务器进行安装。</p>
+<pre><code>curl -O http<span class="variable">s:</span>//packages.gitlab.<span class="keyword">com</span>/gitlab/gitlab-<span class="keyword">ce</span>/packages/<span class="keyword">el</span>/<span class="number">6</span>/gitlab-<span class="keyword">ce</span>-<span class="number">8.6</span>.<span class="number">4</span>-<span class="keyword">ce</span>.<span class="number">0</span>.el6.x86_64.rpm/download
+rpm -<span class="keyword">i</span> gitlab-<span class="keyword">ce</span>-<span class="number">8.6</span>.<span class="number">4</span>-<span class="keyword">ce</span>.<span class="number">0</span>.el6.x86_64.rpm
+</code></pre><p>3.配置和启动GitLab。用 vim 打开 <code>/etc/gitlab/gitlab.rb</code> ,将 <code>external_url = &#39;http://git.example.com&#39;</code> 修改为自己的IP地址：<code>http://xxx.xx.xxx.xxx</code>，然后执行下面的命令，对GitLab进行编译。</p>
+<pre><code><span class="title">sudo</span> gitlab-ctl reconfigure
+</code></pre><p>4.打开 <code>http://xxx.xx.xxx.xxx</code> ,使用gitlab。</p>
+<h3 id="出现的问题">出现的问题</h3><p>1.在浏览器中访问GitLab出现502错误<br>原因：内存不足。<br>解决办法：检查系统的虚拟内存是否随机启动了，如果系统无虚拟内存，则增加虚拟内存，再重新启动系统。</p>
+<p>2.GitLab头像无法正常显示<br>原因：gravatar被墙<br>解决办法：<br>编辑 /etc/gitlab/gitlab.rb，将</p>
+<pre><code><span class="id">#gitlab_rails</span>[<span class="string">'gravatar_plain_url'</span>] = <span class="string">'http://gravatar.duoshuo.com/avatar/%{hash}?s=%{size}&amp;d=identicon'</span>
+</code></pre><p>修改为：</p>
+<pre><code><span class="atom">gitlab_rails</span>[<span class="string">'gravatar_plain_url'</span>] = <span class="string">'http://gravatar.duoshuo.com/avatar/%{hash}?s=%{size}&amp;d=identicon'</span>
+</code></pre><p>然后在命令行执行：</p>
+<pre><code>sudo gitlab-ctl reconfigure 
+sudo gitlab-rake <span class="operator"><span class="keyword">cache</span>:<span class="keyword">clear</span> RAILS_ENV=production</span>
+</code></pre><h3 id="参考资料">参考资料</h3><p><a href="https://segmentfault.com/a/1190000002722631" target="_blank" rel="external">GitLab的安装方式</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[在阿里云上折腾了一天的 GitLab ，编译安装时各种被墙，无法正常安装，最后使用了官网的rpm包安装方式解决了问题。]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://notes.cribug.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux 命令之 scp]]></title>
