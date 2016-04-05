@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="RegEx, 正则表达式，Unicode" />
+  <meta name="keywords" content="Linux, crontab, 每日Linux, Linux定时任务" />
 
 
 
@@ -43,16 +43,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.png?v=0.4.5.1" />
 
 
-<meta name="description" content="一直以来，正则匹配汉字都是个坑，网上搜索出来的 Unicode码段匹配都不怎么好用。前几天在一个技术群里，看到了一个大牛给出了个不错的解决方案。">
+<meta name="description" content="下午刚被面试题完虐回来，面试题里的内容以前做东西时基本上都接触过，但是还是被虐了，这里就说明了长期记忆的重要性，很多知识都需要去整理，去积累。一个月前还用的 crontab ，但是在做面试题的时候就蒙了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP 正则匹配汉字的正确姿势">
-<meta property="og:url" content="http://notes.cribug.com/2016/RegEx-Han/index.html">
+<meta property="og:title" content="Linux 命令之 crontab">
+<meta property="og:url" content="http://notes.cribug.com/2016/linux-crontab/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="一直以来，正则匹配汉字都是个坑，网上搜索出来的 Unicode码段匹配都不怎么好用。前几天在一个技术群里，看到了一个大牛给出了个不错的解决方案。">
-<meta property="og:updated_time" content="2016-03-31T19:17:46.053Z">
+<meta property="og:description" content="下午刚被面试题完虐回来，面试题里的内容以前做东西时基本上都接触过，但是还是被虐了，这里就说明了长期记忆的重要性，很多知识都需要去整理，去积累。一个月前还用的 crontab ，但是在做面试题的时候就蒙了。">
+<meta property="og:updated_time" content="2016-04-05T15:11:51.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP 正则匹配汉字的正确姿势">
-<meta name="twitter:description" content="一直以来，正则匹配汉字都是个坑，网上搜索出来的 Unicode码段匹配都不怎么好用。前几天在一个技术群里，看到了一个大牛给出了个不错的解决方案。">
+<meta name="twitter:title" content="Linux 命令之 crontab">
+<meta name="twitter:description" content="下午刚被面试题完虐回来，面试题里的内容以前做东西时基本上都接触过，但是还是被虐了，这里就说明了长期记忆的重要性，很多知识都需要去整理，去积累。一个月前还用的 crontab ，但是在做面试题的时候就蒙了。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +62,7 @@
   };
 </script>
 
-  <title> PHP 正则匹配汉字的正确姿势 | Cribug's Notes </title>
+  <title> Linux 命令之 crontab | Cribug's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -178,7 +178,7 @@
           
           
             
-              PHP 正则匹配汉字的正确姿势
+              Linux 命令之 crontab
             
           
         </h1>
@@ -187,8 +187,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-03-30T21:32:44+08:00" content="2016-03-30">
-            2016-03-30
+          <time itemprop="dateCreated" datetime="2016-04-05T17:52:21+08:00" content="2016-04-05">
+            2016-04-05
           </time>
         </span>
 
@@ -198,8 +198,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2016/RegEx-Han/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/RegEx-Han/" itemprop="commentsCount"></span>
+            <a href="/2016/linux-crontab/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/linux-crontab/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -213,25 +213,43 @@
       
 
       
-        <span itemprop="articleBody"><p>一直以来，正则匹配汉字都是个坑，网上搜索出来的 <font color="blue">Unicode码段</font>匹配都不怎么好用。前几天在一个技术群里，看到了一个大牛给出了个不错的解决方案。</p>
-<p>下面是我Get到的新技能：</p>
-<pre><code><span class="regexp">/\p{Han}/u</span>
-</code></pre><p>以前从来没见过这样的正则（原谅我的无知吧）。<code>\p{Han}</code> 代表汉语（中文字符），<code>u</code>模式修饰符表示被匹配的字符串是utf-8的（传说中的开启Unicode模式？）。<font color="red">这个正则只适合于 “开启Unicode模式的PHP” 和 “1.9以上版本Ruby” 。</font></p>
-<p>实践出真知：</p>
-<pre><code>&lt;?php
-    <span class="variable">$value</span>=<span class="string">"迷麟--灵山王"</span>;
-    preg_match(<span class="string">'/^(\p{Han}){2}/u'</span>, <span class="variable">$value</span>, <span class="variable">$result</span>);
-    print_r(<span class="variable">$result</span>);
-?&gt;
-</code></pre><p>输出为：</p>
-<pre><code><span class="keyword">Array</span>
-(
-    [<span class="number">0</span>] =&gt; 迷麟
-    [<span class="number">1</span>] =&gt; 麟
-)
-</code></pre><p>参考资料：<br>正则表达式：Unicode诸问题：<a href="http://www.infoq.com/cn/news/2011/03/regular-expressions-unicode-2" target="_blank" rel="external">http://www.infoq.com/cn/news/2011/03/regular-expressions-unicode-2</a><br>模式修饰符：<a href="http://php.net/manual/zh/reference.pcre.pattern.modifiers.php" target="_blank" rel="external">http://php.net/manual/zh/reference.pcre.pattern.modifiers.php</a></p>
-<p>欢迎大家学习交流。</p>
-</span>
+        <span itemprop="articleBody"><p>下午刚被面试题完虐回来，面试题里的内容以前做东西时基本上都接触过，但是还是被虐了，这里就说明了长期记忆的重要性，很多知识都需要去整理，去积累。一个月前还用的 crontab ，但是在做面试题的时候就蒙了。</p>
+<p>crond是linux下用来周期性的执行某种任务或等待处理某些事件的一个守护进程，与windows下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
+<p>Linux下的任务调度分为两类，系统任务调度和用户任务调度。</p>
+<h3 id="系统任务调度">系统任务调度</h3><p>系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等。在/etc目录下有一个crontab文件，这个就是系统任务调度的配置文件。<code>cat /etc/crontab</code>:</p>
+<pre><code>SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+<span class="preprocessor"># For details see man <span class="number">4</span> crontabs</span>
+
+<span class="preprocessor"># Example of job definition:</span>
+<span class="preprocessor"># .---------------- minute (<span class="number">0</span> - <span class="number">59</span>)</span>
+<span class="preprocessor"># |  .------------- hour (<span class="number">0</span> - <span class="number">23</span>)</span>
+<span class="preprocessor"># |  |  .---------- day of month (<span class="number">1</span> - <span class="number">31</span>)</span>
+<span class="preprocessor"># |  |  |  .------- month (<span class="number">1</span> - <span class="number">12</span>) OR jan,feb,mar,apr ...</span>
+<span class="preprocessor"># |  |  |  |  .---- day of week (<span class="number">0</span> - <span class="number">6</span>) (Sunday=<span class="number">0</span> or <span class="number">7</span>) OR sun,mon,tue,wed,thu,fri,sat</span>
+<span class="preprocessor"># |  |  |  |  |</span>
+<span class="preprocessor"># *  *  *  *  * user-name  command to be executed</span>
+</code></pre><p>前三行是用来配置crond任务运行的环境变量，第一行SHELL变量指定了系统要使用哪个shell，这里是bash，第二行PATH变量指定了系统执行命令的路径，第三行MAILTO变量指定了crond的任务执行信息将通过电子邮件发送给root用户，如果MAILTO变量的值为空，则表示不发送任务执行信息给用户。</p>
+<h3 id="用户任务调度">用户任务调度</h3><p>用户定期要执行的工作，比如用户数据备份、定时邮件提醒等。用户可以使用crontab工具来定制自己的计划任务。</p>
+<p>所有用户定义的 <code>crontab</code> 文件都被保存在 <code>/var/spool/cron</code> 目录中。其文件名与用户名一致。<br><code>/etc/cron.deny</code> 该文件中所列用户不允许使用crontab命令。<br><code>/etc/cron.allow</code> 该文件中所列用户允许使用crontab命令（默认情况下不存在）。<br>如果两个文件同时存在，那么/etc/cron.allow优先。如果两个文件都不存在，那么只有root用户可以安排作业。</p>
+<p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：</p>
+<pre><code><span class="preprocessor"># .---------------- minute 表示分钟，可以是从<span class="number">0</span>到<span class="number">59</span>之间的任何整数。</span>
+<span class="preprocessor"># |  .------------- hour 表示小时，可以是从<span class="number">0</span>到<span class="number">23</span>之间的任何整数。</span>
+<span class="preprocessor"># |  |  .---------- day 表示日期，可以是从<span class="number">1</span>到<span class="number">31</span>之间的任何整数。</span>
+<span class="preprocessor"># |  |  |  .------- 表示月份，可以是从<span class="number">1</span>到<span class="number">12</span>之间的任何整数。</span>
+<span class="preprocessor"># |  |  |  |  .---- 表示星期几，可以是从<span class="number">0</span>到<span class="number">7</span>之间的任何整数，这里的<span class="number">0</span>或<span class="number">7</span>代表星期日。</span>
+<span class="preprocessor"># |  |  |  |  |  .-command要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</span>
+<span class="preprocessor"># |  |  |  |  |  |</span>
+<span class="preprocessor"># *  *  *  *  *  * </span>
+</code></pre><p>在以上各个字段中，还可以使用以下特殊字符：</p>
+<pre><code>* : 代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。
+, : 可以用逗号隔开的值指定一个列表范围，例如，“<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>”
+- : 可以用整数之间的中杠表示一个整数范围，例如“<span class="number">2</span>-<span class="number">6</span>”表示“<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>”
+/ : 可以用正斜线指定时间的间隔频率，例如“<span class="number">0</span>-<span class="number">23</span>/<span class="number">2</span>”表示每两小时执行一次。
+    同时正斜线可以和星号一起使用，例如*/<span class="number">10</span>，如果用在minute字段，表示每十分钟执行一次。
+</code></pre></span>
       
     </div>
 
@@ -239,7 +257,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/RegEx/" rel="tag">#RegEx</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
         </div>
       
@@ -248,13 +266,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/Learn-PHP/" rel="prev">推荐一些 PHP 学习资料</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/TCC2016/" rel="next">各路大牛齐聚《技术社群大会》</a>
+              <a href="/2016/gitlab-start/" rel="next">GitLab的安装</a>
             
           </div>
         </div>
@@ -394,7 +410,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统任务调度"><span class="nav-number">1.</span> <span class="nav-text">系统任务调度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户任务调度"><span class="nav-number">2.</span> <span class="nav-text">用户任务调度</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -452,9 +468,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'cribug';
-      var disqus_identifier = '2016/RegEx-Han/';
-      var disqus_title = 'PHP 正则匹配汉字的正确姿势';
-      var disqus_url = 'http://notes.cribug.com/2016/RegEx-Han/';
+      var disqus_identifier = '2016/linux-crontab/';
+      var disqus_title = 'Linux 命令之 crontab';
+      var disqus_url = 'http://notes.cribug.com/2016/linux-crontab/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

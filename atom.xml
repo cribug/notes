@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-04T17:54:10.939Z</updated>
+  <updated>2016-04-05T15:11:51.051Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,6 +13,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux 命令之 crontab]]></title>
+    <link href="http://notes.cribug.com/2016/linux-crontab/"/>
+    <id>http://notes.cribug.com/2016/linux-crontab/</id>
+    <published>2016-04-05T09:52:21.000Z</published>
+    <updated>2016-04-05T15:11:51.051Z</updated>
+    <content type="html"><![CDATA[<p>下午刚被面试题完虐回来，面试题里的内容以前做东西时基本上都接触过，但是还是被虐了，这里就说明了长期记忆的重要性，很多知识都需要去整理，去积累。一个月前还用的 crontab ，但是在做面试题的时候就蒙了。</p>
+<p>crond是linux下用来周期性的执行某种任务或等待处理某些事件的一个守护进程，与windows下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
+<p>Linux下的任务调度分为两类，系统任务调度和用户任务调度。</p>
+<h3 id="系统任务调度">系统任务调度</h3><p>系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等。在/etc目录下有一个crontab文件，这个就是系统任务调度的配置文件。<code>cat /etc/crontab</code>:</p>
+<pre><code>SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+<span class="preprocessor"># For details see man <span class="number">4</span> crontabs</span>
+
+<span class="preprocessor"># Example of job definition:</span>
+<span class="preprocessor"># .---------------- minute (<span class="number">0</span> - <span class="number">59</span>)</span>
+<span class="preprocessor"># |  .------------- hour (<span class="number">0</span> - <span class="number">23</span>)</span>
+<span class="preprocessor"># |  |  .---------- day of month (<span class="number">1</span> - <span class="number">31</span>)</span>
+<span class="preprocessor"># |  |  |  .------- month (<span class="number">1</span> - <span class="number">12</span>) OR jan,feb,mar,apr ...</span>
+<span class="preprocessor"># |  |  |  |  .---- day of week (<span class="number">0</span> - <span class="number">6</span>) (Sunday=<span class="number">0</span> or <span class="number">7</span>) OR sun,mon,tue,wed,thu,fri,sat</span>
+<span class="preprocessor"># |  |  |  |  |</span>
+<span class="preprocessor"># *  *  *  *  * user-name  command to be executed</span>
+</code></pre><p>前三行是用来配置crond任务运行的环境变量，第一行SHELL变量指定了系统要使用哪个shell，这里是bash，第二行PATH变量指定了系统执行命令的路径，第三行MAILTO变量指定了crond的任务执行信息将通过电子邮件发送给root用户，如果MAILTO变量的值为空，则表示不发送任务执行信息给用户。</p>
+<h3 id="用户任务调度">用户任务调度</h3><p>用户定期要执行的工作，比如用户数据备份、定时邮件提醒等。用户可以使用crontab工具来定制自己的计划任务。</p>
+<p>所有用户定义的 <code>crontab</code> 文件都被保存在 <code>/var/spool/cron</code> 目录中。其文件名与用户名一致。<br><code>/etc/cron.deny</code> 该文件中所列用户不允许使用crontab命令。<br><code>/etc/cron.allow</code> 该文件中所列用户允许使用crontab命令（默认情况下不存在）。<br>如果两个文件同时存在，那么/etc/cron.allow优先。如果两个文件都不存在，那么只有root用户可以安排作业。</p>
+<p>用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：</p>
+<pre><code><span class="preprocessor"># .---------------- minute 表示分钟，可以是从<span class="number">0</span>到<span class="number">59</span>之间的任何整数。</span>
+<span class="preprocessor"># |  .------------- hour 表示小时，可以是从<span class="number">0</span>到<span class="number">23</span>之间的任何整数。</span>
+<span class="preprocessor"># |  |  .---------- day 表示日期，可以是从<span class="number">1</span>到<span class="number">31</span>之间的任何整数。</span>
+<span class="preprocessor"># |  |  |  .------- 表示月份，可以是从<span class="number">1</span>到<span class="number">12</span>之间的任何整数。</span>
+<span class="preprocessor"># |  |  |  |  .---- 表示星期几，可以是从<span class="number">0</span>到<span class="number">7</span>之间的任何整数，这里的<span class="number">0</span>或<span class="number">7</span>代表星期日。</span>
+<span class="preprocessor"># |  |  |  |  |  .-command要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</span>
+<span class="preprocessor"># |  |  |  |  |  |</span>
+<span class="preprocessor"># *  *  *  *  *  * </span>
+</code></pre><p>在以上各个字段中，还可以使用以下特殊字符：</p>
+<pre><code>* : 代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。
+, : 可以用逗号隔开的值指定一个列表范围，例如，“<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>”
+- : 可以用整数之间的中杠表示一个整数范围，例如“<span class="number">2</span>-<span class="number">6</span>”表示“<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>”
+/ : 可以用正斜线指定时间的间隔频率，例如“<span class="number">0</span>-<span class="number">23</span>/<span class="number">2</span>”表示每两小时执行一次。
+    同时正斜线可以和星号一起使用，例如*/<span class="number">10</span>，如果用在minute字段，表示每十分钟执行一次。
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[下午刚被面试题完虐回来，面试题里的内容以前做东西时基本上都接触过，但是还是被虐了，这里就说明了长期记忆的重要性，很多知识都需要去整理，去积累。一个月前还用的 crontab ，但是在做面试题的时候就蒙了。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[GitLab的安装]]></title>
