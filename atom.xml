@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-07T15:46:20.772Z</updated>
+  <updated>2016-04-07T15:49:29.663Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://notes.cribug.com/2016/linux-cd/"/>
     <id>http://notes.cribug.com/2016/linux-cd/</id>
     <published>2016-04-07T14:30:00.000Z</published>
-    <updated>2016-04-07T15:46:20.772Z</updated>
+    <updated>2016-04-07T15:49:29.663Z</updated>
     <content type="html"><![CDATA[<p><code>cd</code> 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 <code>cd</code> 命令上。所以，学习 Linux 常用命令，首先要学好 <code>cd</code> 命令的使用技巧。</p>
 <h3 id="1-_命令格式">1. 命令格式</h3><pre><code>cd <span class="string">[目录名]</span>
 </code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>切换当前目录至另外一目录</p>
@@ -36,7 +36,7 @@
 <span class="built_in">cd</span> /usr/<span class="built_in">local</span>   <span class="comment"># 进入指定目录，从根目录开始，目录名称前加 / ,当前目录内的子目录直接写名称即可</span>
 <span class="built_in">cd</span> -            <span class="comment"># 返回进入此目录之前所在的目录</span>
 <span class="built_in">cd</span> !$           <span class="comment"># 把上个命令的参数作为cd参数使用</span>
-</code></pre><p>整理自《每天一个linux命令》: <a href="http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html" target="_blank" rel="external">http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html</a></p>
+</code></pre><p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html" target="_blank" rel="external">每天一个Linux命令</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[cd 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 cd 命令上。所以，学习 Linux 常用命令，首先要学好 cd 命令的使用技巧。]]>
