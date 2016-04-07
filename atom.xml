@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-06T15:56:21.106Z</updated>
+  <updated>2016-04-07T15:46:20.772Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -15,16 +15,54 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Linux 命令之 cd]]></title>
+    <link href="http://notes.cribug.com/2016/linux-cd/"/>
+    <id>http://notes.cribug.com/2016/linux-cd/</id>
+    <published>2016-04-07T14:30:00.000Z</published>
+    <updated>2016-04-07T15:46:20.772Z</updated>
+    <content type="html"><![CDATA[<p><code>cd</code> 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 <code>cd</code> 命令上。所以，学习 Linux 常用命令，首先要学好 <code>cd</code> 命令的使用技巧。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>cd <span class="string">[目录名]</span>
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>切换当前目录至另外一目录</p>
+<h3 id="3-_常用范例">3. 常用范例</h3><pre><code><span class="built_in">cd</span> /            <span class="comment"># 进入根目录</span>
+
+<span class="built_in">cd</span> ..           <span class="comment"># 退到上一目录</span>
+<span class="built_in">cd</span> ..//         <span class="comment"># 退到上一目录</span>
+
+<span class="built_in">cd</span> ../.. //     <span class="comment"># 使用cd 命令实现进入当前目录的父目录的父目录</span>
+
+<span class="built_in">cd</span>              <span class="comment"># 进入当前用户主目录</span>
+<span class="built_in">cd</span> ~            <span class="comment"># 进入当前用户主目录</span>
+
+<span class="built_in">cd</span> /usr/<span class="built_in">local</span>   <span class="comment"># 进入指定目录，从根目录开始，目录名称前加 / ,当前目录内的子目录直接写名称即可</span>
+<span class="built_in">cd</span> -            <span class="comment"># 返回进入此目录之前所在的目录</span>
+<span class="built_in">cd</span> !$           <span class="comment"># 把上个命令的参数作为cd参数使用</span>
+</code></pre><p>整理自《每天一个linux命令》: <a href="http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html" target="_blank" rel="external">http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[cd 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 cd 命令上。所以，学习 Linux 常用命令，首先要学好 cd 命令的使用技巧。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Linux 命令之 ls]]></title>
     <link href="http://notes.cribug.com/2016/linux-ls/"/>
     <id>http://notes.cribug.com/2016/linux-ls/</id>
     <published>2016-04-06T15:48:00.000Z</published>
-    <updated>2016-04-06T15:56:21.106Z</updated>
-    <content type="html"><![CDATA[<p>ls命令是linux下最常用的命令。ls命令就是list的缩写，缺省下ls用来打印出当前目录的清单。如果ls指定其他目录，那么就会显示指定目录里的文件及文件夹清单。</p>
-<p>通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限（包括目录、文件夹、文件权限）查看目录信息等等。</p>
-<h1>占位。。。稍后上传！</h1>]]></content>
+    <updated>2016-04-07T15:15:01.699Z</updated>
+    <content type="html"><![CDATA[<p><code>ls</code> 命令是linux下最常用的命令。<code>ls</code> 命令就是 <code>list</code> 的缩写，缺省下 <code>ls</code> 用来打印出当前目录的清单。如果 <code>ls</code> 指定其他目录，那么就会显示指定目录里的文件及文件夹清单。</p>
+<p>通过 <code>ls</code> 目录命令不仅可以查看linux文包含的文件，而且可以查看文件权限等信息。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>ls <span class="string">[参数]</span> <span class="string">[目录名]</span>
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>列出目标目录中所有的子目录和文件。</p>
+<h3 id="3-_常用参数">3. 常用参数</h3><table><br>    <tr><br>        <td>-a , –all</td><br>        <td>-A</td><br>        <td>-c</td><br>        <td></td><br>        <td></td><br>    </tr><br>    <tr><br>        <td>列出目录下的所有文件，包括以 . 开头的隐含文件</td><br>        <td>同-a, 但不列出”.”(表示当前目录)和”..”(表示当前目录的父目录</td><br>        <td>配合-lt: 根据 ctime 排序及显示 ctime (文件状态最后更改的时间)</td><br>        <td>配合-l: 显示 ctime 但根据名称排序</td><br>        <td>否则: 根据 ctime 排序</td><br>    </tr><br></table>
+
+
+<!-- ### 4. 常用范例 ### -->]]></content>
     <summary type="html">
-    <![CDATA[ls命令是linux下最常用的命令。ls命令就是list的缩写，缺省下ls用来打印出当前目录的清单。如果ls指定其他目录，那么就会显示指定目录里的文件及文件夹清单。通过ls 命令不仅可以查看linux文件夹包含的文件，而且可以查看文件权限（包括目录、文件夹、文件权限）查看目录信息等等。]]>
+    <![CDATA[ls命令是linux下最常用的命令。ls命令就是list的缩写，缺省下ls用来打印出当前目录的清单。如果ls指定其他目录，那么就会显示指定目录里的文件及文件夹清单。通过ls 命令不仅可以查看linux目录包含的文件，而且可以查看文件权限等信息。]]>
     
     </summary>
     

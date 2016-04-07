@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="Fiddler, Wireshark, Mobile, caught" />
+  <meta name="keywords" content="Linux, cd, 每日Linux" />
 
 
 
@@ -43,16 +43,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.png?v=0.4.5.1" />
 
 
-<meta name="description" content="在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。">
+<meta name="description" content="cd 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 cd 命令上。所以，学习 Linux 常用命令，首先要学好 cd 命令的使用技巧。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Fiddler和Wireshark进行手机抓包">
-<meta property="og:url" content="http://notes.cribug.com/2015/mobile-caught/index.html">
+<meta property="og:title" content="Linux 命令之 cd">
+<meta property="og:url" content="http://notes.cribug.com/2016/linux-cd/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。">
-<meta property="og:updated_time" content="2016-01-28T18:07:10.048Z">
+<meta property="og:description" content="cd 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 cd 命令上。所以，学习 Linux 常用命令，首先要学好 cd 命令的使用技巧。">
+<meta property="og:updated_time" content="2016-04-07T15:46:20.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用Fiddler和Wireshark进行手机抓包">
-<meta name="twitter:description" content="在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。">
+<meta name="twitter:title" content="Linux 命令之 cd">
+<meta name="twitter:description" content="cd 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 cd 命令上。所以，学习 Linux 常用命令，首先要学好 cd 命令的使用技巧。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +62,7 @@
   };
 </script>
 
-  <title> 使用Fiddler和Wireshark进行手机抓包 | Cribug's Notes </title>
+  <title> Linux 命令之 cd | Cribug's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -178,7 +178,7 @@
           
           
             
-              使用Fiddler和Wireshark进行手机抓包
+              Linux 命令之 cd
             
           
         </h1>
@@ -187,8 +187,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-11-11T11:11:11+08:00" content="2015-11-11">
-            2015-11-11
+          <time itemprop="dateCreated" datetime="2016-04-07T22:30:00+08:00" content="2016-04-07">
+            2016-04-07
           </time>
         </span>
 
@@ -198,8 +198,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/mobile-caught/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/mobile-caught/" itemprop="commentsCount"></span>
+            <a href="/2016/linux-cd/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/linux-cd/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -213,21 +213,23 @@
       
 
       
-        <span itemprop="articleBody"><p>在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。</p>
-<h3 id="使用Fiddler抓取Http（Fiddler只能抓取Http）">使用Fiddler抓取Http（Fiddler只能抓取Http）</h3><p>Fiddler可以拦截发出或者收到的Http，可以修改Http的Request和Response数据，因此用这种方法可以模拟一些特殊场景（如包无响应、模拟一些很难出现的错误码等）。:</p>
-<ul>
-<li>电脑和手机连接到同一个Wifi（同一局域网下）。</li>
-<li>电脑端：设置Fiddler，Tools—&gt;Fiddler Option，在connections选项卡下设置监听的端口号（默认8888），然后勾选“Allow remote computers connect”，点击“ok”。</li>
-<li>手机端：将该Wifi的代（dai）理（li）选项设置为手动，主机名填写电脑的IP，端口号填写电脑端刚刚设置端口号（默认8888），保存。</li>
-<li>设置完毕，电脑端重启Fiddler，操作手机，即可在电脑端的Fiddler上看到http码流。</li>
-</ul>
-<h3 id="使用Wireshark抓包（需要电脑携带无线网卡）">使用Wireshark抓包（需要电脑携带无线网卡）</h3><p>该方法手机无须root，并且适用于各种有wifi功能的手机（IOS、Android等）、平板等。只要电脑的无线网卡具有无线承载功能，就可以。</p>
-<ul>
-<li>把电脑的网络做为热点分享出去。</li>
-<li>手机连接电脑热点。</li>
-<li>启动Wireshark，选择做为热点的网卡，点击start开始抓包。</li>
-<li>操作手机，可以抓取到手机所有与网络交互的数据包，如需停止，直接点击wireshark的stop即可。</li>
-</ul>
+        <span itemprop="articleBody"><p><code>cd</code> 命令可以说是 Linux 中最基本的命令语句，其他命令的操作，基本都是建立在 <code>cd</code> 命令上。所以，学习 Linux 常用命令，首先要学好 <code>cd</code> 命令的使用技巧。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>cd <span class="string">[目录名]</span>
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>切换当前目录至另外一目录</p>
+<h3 id="3-_常用范例">3. 常用范例</h3><pre><code><span class="built_in">cd</span> /            <span class="comment"># 进入根目录</span>
+
+<span class="built_in">cd</span> ..           <span class="comment"># 退到上一目录</span>
+<span class="built_in">cd</span> ..//         <span class="comment"># 退到上一目录</span>
+
+<span class="built_in">cd</span> ../.. //     <span class="comment"># 使用cd 命令实现进入当前目录的父目录的父目录</span>
+
+<span class="built_in">cd</span>              <span class="comment"># 进入当前用户主目录</span>
+<span class="built_in">cd</span> ~            <span class="comment"># 进入当前用户主目录</span>
+
+<span class="built_in">cd</span> /usr/<span class="built_in">local</span>   <span class="comment"># 进入指定目录，从根目录开始，目录名称前加 / ,当前目录内的子目录直接写名称即可</span>
+<span class="built_in">cd</span> -            <span class="comment"># 返回进入此目录之前所在的目录</span>
+<span class="built_in">cd</span> !$           <span class="comment"># 把上个命令的参数作为cd参数使用</span>
+</code></pre><p>整理自《每天一个linux命令》: <a href="http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html" target="_blank" rel="external">http://www.cnblogs.com/peida/archive/2012/10/24/2736501.html</a></p>
 </span>
       
     </div>
@@ -236,7 +238,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/抓包/" rel="tag">#抓包</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
         </div>
       
@@ -245,11 +247,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/mysql-backup/" rel="prev">MySQL备份与恢复</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/linux-ls/" rel="next">Linux 命令之 ls</a>
             
           </div>
         </div>
@@ -389,7 +391,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Fiddler抓取Http（Fiddler只能抓取Http）"><span class="nav-number">1.</span> <span class="nav-text">使用Fiddler抓取Http（Fiddler只能抓取Http）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Wireshark抓包（需要电脑携带无线网卡）"><span class="nav-number">2.</span> <span class="nav-text">使用Wireshark抓包（需要电脑携带无线网卡）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_命令格式"><span class="nav-number">1.</span> <span class="nav-text">1. 命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_命令功能"><span class="nav-number">2.</span> <span class="nav-text">2. 命令功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_常用范例"><span class="nav-number">3.</span> <span class="nav-text">3. 常用范例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -447,9 +449,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'cribug';
-      var disqus_identifier = '2015/mobile-caught/';
-      var disqus_title = '使用Fiddler和Wireshark进行手机抓包';
-      var disqus_url = 'http://notes.cribug.com/2015/mobile-caught/';
+      var disqus_identifier = '2016/linux-cd/';
+      var disqus_title = 'Linux 命令之 cd';
+      var disqus_url = 'http://notes.cribug.com/2016/linux-cd/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
