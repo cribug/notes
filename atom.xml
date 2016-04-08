@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-07T15:49:29.663Z</updated>
+  <updated>2016-04-08T15:36:08.536Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,6 +13,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux 命令之 pwd]]></title>
+    <link href="http://notes.cribug.com/2016/linux-pwd/"/>
+    <id>http://notes.cribug.com/2016/linux-pwd/</id>
+    <published>2016-04-08T15:14:00.000Z</published>
+    <updated>2016-04-08T15:36:08.536Z</updated>
+    <content type="html"><![CDATA[<p>Linux中用 pwd 命令来查看”当前工作目录“的完整路径。简单得说，每当你在终端进行操作时，你都会有一个当前工作目录。在不太确定当前位置时，就会使用pwd来判定当前目录在文件系统内的确切位置。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>pwd <span class="string">[选项]</span>
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>查看“当前工作目录”的完整路径</p>
+<h3 id="3-_常用参数">3. 常用参数</h3><p>一般情况下不带任何参数<br>如果目录是连接时，使用 <code>pwd -P</code> 会显示出实际路径，而非使用连接（link）路径</p>
+<h3 id="4-_常用实例">4. 常用实例</h3><pre><code><span class="comment"># 用 pwd 命令查看默认工作目录的完整路径</span>
+[root<span class="annotation">@localhost</span> ~]<span class="comment"># pwd</span>
+/root
+[root<span class="annotation">@localhost</span> ~]<span class="comment">#</span>
+
+<span class="comment"># 使用 pwd 命令查看指定文件夹</span>
+[root<span class="annotation">@localhost</span> ~]<span class="comment"># cd /usr/local/</span>
+[root<span class="annotation">@localhost</span> soft]<span class="comment"># pwd </span>
+/usr/<span class="keyword">local</span>/
+[root<span class="annotation">@localhost</span> soft]<span class="comment">#</span>
+
+<span class="comment"># 目录是连接时，pwd -P 显示出实际路径，而非使用连接（link）路径，pwd显示的是连接路径</span>
+[root<span class="annotation">@localhost</span> soft]<span class="comment"># cd /etc/init.d </span>
+[root<span class="annotation">@localhost</span> init.d]<span class="comment"># pwd</span>
+/etc/init.d
+[root<span class="annotation">@localhost</span> init.d]<span class="comment"># pwd -P</span>
+/etc/rc.d/init.d
+[root<span class="annotation">@localhost</span> init.d]<span class="comment">#</span>
+
+<span class="comment"># /bin/pwd，-L 目录连接链接时，输出连接路径；-P 输出物理路径</span>
+[root<span class="annotation">@localhost</span> init.d]<span class="comment"># /bin/pwd </span>
+/etc/rc.d/init.d
+[root<span class="annotation">@localhost</span> init.d]<span class="comment"># /bin/pwd -P</span>
+/etc/rc.d/init.d
+[root<span class="annotation">@localhost</span> init.d]<span class="comment"># /bin/pwd -L</span>
+/etc/init.d
+[root<span class="annotation">@localhost</span> init.d]<span class="comment">#</span>
+
+<span class="comment"># 当前目录被删除了，而pwd命令仍然显示那个目录</span>
+[root<span class="annotation">@localhost</span> init.d]<span class="comment"># cd /opt/soft</span>
+[root<span class="annotation">@localhost</span> soft]<span class="comment"># mkdir removed</span>
+[root<span class="annotation">@localhost</span> soft]<span class="comment"># cd removed/</span>
+[root<span class="annotation">@localhost</span> removed]<span class="comment"># pwd</span>
+/opt/soft/removed
+[root<span class="annotation">@localhost</span> removed]<span class="comment"># rm ../removed -rf</span>
+[root<span class="annotation">@localhost</span> removed]<span class="comment"># pwd</span>
+/opt/soft/removed
+[root<span class="annotation">@localhost</span> removed]<span class="comment"># /bin/pwd</span>
+/bin/pwd: couldn't <span class="keyword">find</span> directory entry <span class="keyword">in</span> “..” <span class="keyword">with</span> matching i-node
+</code></pre><p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/24/2737730.html" target="_blank" rel="external">每天一个linux命令: pwd命令</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[Linux中用 pwd 命令来查看”当前工作目录“的完整路径。简单得说，每当你在终端进行操作时，你都会有一个当前工作目录。在不太确定当前位置时，就会使用pwd来判定当前目录在文件系统内的确切位置。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux 命令之 cd]]></title>
