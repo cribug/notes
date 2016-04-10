@@ -196,6 +196,13 @@
 
         
           
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/gitlab-start/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/gitlab-start/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
         
       </div>
     </header>
@@ -283,6 +290,10 @@ sudo gitlab-rake <span class="operator"><span class="keyword">cache</span>:<span
 
         
           <div class="comments" id="comments">
+            
+              <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
             
           </div>
         
@@ -449,6 +460,27 @@ sudo gitlab-rake <span class="operator"><span class="keyword">cache</span>:<span
     
     
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'cribug';
+      var disqus_identifier = '2016/gitlab-start/';
+      var disqus_title = 'GitLab的安装';
+      var disqus_url = 'http://notes.cribug.com/2016/gitlab-start/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
 
