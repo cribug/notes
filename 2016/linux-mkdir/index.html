@@ -49,7 +49,7 @@
 <meta property="og:url" content="http://notes.cribug.com/2016/linux-mkdir/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
 <meta property="og:description" content="mkdir 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。">
-<meta property="og:updated_time" content="2016-04-09T15:51:44.723Z">
+<meta property="og:updated_time" content="2016-04-10T15:12:29.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 命令之 mkdir">
 <meta name="twitter:description" content="mkdir 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。">
@@ -196,13 +196,6 @@
 
         
           
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2016/linux-mkdir/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/linux-mkdir/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
         
       </div>
     </header>
@@ -213,8 +206,17 @@
       
 
       
-        <span itemprop="articleBody"><p>mkdir 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。</p>
-<h3 id="稍后上传。。。">稍后上传。。。</h3></span>
+        <span itemprop="articleBody"><p><code>mkdir</code> 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>mkdir <span class="string">[选项]</span> 目录名
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>通过 <code>mkdir</code> 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录，即同一个目录下不能有同名的（区分大小写）。 </p>
+<h3 id="3-_常用参数">3. 常用参数</h3><p>-m, –mode      # 设定权限（类似 chmod），而不是 rwxrwxrwx 减 umask<br>-p, –parents   # 递归创建多个目录<br>-v, –verbose   # 每次创建新目录都显示信息<br>    –help      # 显示此帮助信息并退出<br>    –version   # 输出版本信息并退出</p>
+<h3 id="4-_常用实例">4. 常用实例</h3><pre><code>mkdir test
+mkdir -p test2/test22
+mkdir -m <span class="number">777</span> test3
+mkdir -v test4
+mkdir -vp scf/{<span class="class"><span class="keyword">lib</span>/,<span class="title">bin</span>/,<span class="title">doc</span>/{<span class="title">info</span>,<span class="title">product</span>},<span class="title">logs</span>/{<span class="title">info</span>,<span class="title">product</span>},<span class="title">service</span>/<span class="title">deploy</span>/{<span class="title">info</span>,<span class="title">product</span>}}</span>
+</code></pre><p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/25/2738271.html" target="_blank" rel="external">每天一个linux命令: mkdir命令</a></p>
+</span>
       
     </div>
 
@@ -230,6 +232,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/linux-rm/" rel="prev">Linux 命令之 rm</a>
             
           </div>
 
@@ -259,10 +263,6 @@
 
         
           <div class="comments" id="comments">
-            
-              <div id="disqus_thread">
-                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-              </div>
             
           </div>
         
@@ -301,7 +301,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -375,7 +375,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#稍后上传。。。"><span class="nav-number">1.</span> <span class="nav-text">稍后上传。。。</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_命令格式"><span class="nav-number">1.</span> <span class="nav-text">1. 命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_命令功能"><span class="nav-number">2.</span> <span class="nav-text">2. 命令功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_常用参数"><span class="nav-number">3.</span> <span class="nav-text">3. 常用参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_常用实例"><span class="nav-number">4.</span> <span class="nav-text">4. 常用实例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -429,27 +429,6 @@
     
     
 
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'cribug';
-      var disqus_identifier = '2016/linux-mkdir/';
-      var disqus_title = 'Linux 命令之 mkdir';
-      var disqus_url = 'http://notes.cribug.com/2016/linux-mkdir/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
   
 
 

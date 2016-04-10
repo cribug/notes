@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-09T15:51:44.723Z</updated>
+  <updated>2016-04-10T15:37:43.768Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -15,13 +15,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Linux 命令之 rm]]></title>
+    <link href="http://notes.cribug.com/2016/linux-rm/"/>
+    <id>http://notes.cribug.com/2016/linux-rm/</id>
+    <published>2016-04-10T15:20:00.000Z</published>
+    <updated>2016-04-10T15:37:43.768Z</updated>
+    <content type="html"><![CDATA[<p>rm 是常用的命令，该命令的功能为删除一个目录中的一个或多个文件或目录，它也可以将某个目录及其下的所有文件和子目录均删除。对于链接文件，只是删除了链接，原有文件保持不变。</p>
+<p>rm是一个危险的命令，使用的时候要特别当心，否则整个系统就会毁掉（比如在/下执行 <code>rm -rf *</code> ）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>rm <span class="string">[选项]</span> 文件
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>删除一个目录中的一个或多个文件和目录，如果没有使用 <code>-r</code> 选项，则rm不会删除目录。 </p>
+<h3 id="3-_常用参数">3. 常用参数</h3><p>-f, –force             # 忽略不存在的文件，不给出提示。<br>-i, –interactive       # 进行交互式删除<br>-r, -R, –recursive     # 将列出的全部目录和子目录均递归地删除。<br>-v, –verbose           # 详细显示进行的步骤<br>    –help              # 显示此帮助信息并退出<br>    –version           # 输出版本信息并退出</p>
+<h3 id="4-_常用实例">4. 常用实例</h3><pre><code><span class="keyword">rm</span> 文件名       # 删除文件，系统会先询问是否删除
+<span class="keyword">rm</span> -f 文件名    # 强行删除<span class="keyword">file</span>，系统不再提示
+<span class="keyword">rm</span> -i *.<span class="keyword">log</span>     # 删除任何.<span class="keyword">log</span>文件；删除前逐一询问确认
+<span class="keyword">rm</span> -r <span class="keyword">test</span>      # 将 <span class="keyword">test</span> 目录及目录中所有档案删除
+<span class="keyword">rm</span> -rf <span class="keyword">test</span>     # 将 <span class="keyword">test</span> 目录及目录中所有档案删除,并且不用确认
+<span class="keyword">rm</span> -- -f        # 删除以 -f 开头的文件
+</code></pre><h3 id="5-_自定义回收站功能">5. 自定义回收站功能</h3><pre><code>myrm(){ D=/tmp/$(date +<span class="decorator">%Y</span><span class="decorator">%m</span><span class="decorator">%d</span><span class="decorator">%H</span><span class="decorator">%M</span><span class="decorator">%S</span>); mkdir -p <span class="variable">$D</span>; mv <span class="string">"$@"</span> <span class="variable">$D</span> &amp;&amp; echo <span class="string">"moved to $D ok"</span>; }
+</code></pre><p>上面的操作过程模拟了回收站的效果，即删除文件的时候只是把文件放到一个临时目录中，这样在需要的时候还可以恢复过来。</p>
+<p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/26/2740521.html" target="_blank" rel="external">每天一个linux命令: rm命令</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[rm 是常用的命令，该命令的功能为删除一个目录中的一个或多个文件和目录，它也可以将某个目录及其下的所有文件和子目录均删除。对于链接文件，只是删除了链接，原有文件保持不变。rm是一个危险的命令，使用的时候要特别当心，否则整个系统就会毁掉（比如在/下执行rm -rf *）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Linux 命令之 mkdir]]></title>
     <link href="http://notes.cribug.com/2016/linux-mkdir/"/>
     <id>http://notes.cribug.com/2016/linux-mkdir/</id>
     <published>2016-04-09T15:03:00.000Z</published>
-    <updated>2016-04-09T15:51:44.723Z</updated>
-    <content type="html"><![CDATA[<p>mkdir 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。</p>
-<h3 id="稍后上传。。。">稍后上传。。。</h3>]]></content>
+    <updated>2016-04-10T15:12:29.714Z</updated>
+    <content type="html"><![CDATA[<p><code>mkdir</code> 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>mkdir <span class="string">[选项]</span> 目录名
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>通过 <code>mkdir</code> 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录，即同一个目录下不能有同名的（区分大小写）。 </p>
+<h3 id="3-_常用参数">3. 常用参数</h3><p>-m, –mode      # 设定权限（类似 chmod），而不是 rwxrwxrwx 减 umask<br>-p, –parents   # 递归创建多个目录<br>-v, –verbose   # 每次创建新目录都显示信息<br>    –help      # 显示此帮助信息并退出<br>    –version   # 输出版本信息并退出</p>
+<h3 id="4-_常用实例">4. 常用实例</h3><pre><code>mkdir test
+mkdir -p test2/test22
+mkdir -m <span class="number">777</span> test3
+mkdir -v test4
+mkdir -vp scf/{<span class="class"><span class="keyword">lib</span>/,<span class="title">bin</span>/,<span class="title">doc</span>/{<span class="title">info</span>,<span class="title">product</span>},<span class="title">logs</span>/{<span class="title">info</span>,<span class="title">product</span>},<span class="title">service</span>/<span class="title">deploy</span>/{<span class="title">info</span>,<span class="title">product</span>}}</span>
+</code></pre><p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/25/2738271.html" target="_blank" rel="external">每天一个linux命令: mkdir命令</a></p>
+]]></content>
     <summary type="html">
     <![CDATA[mkdir 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。]]>
     
