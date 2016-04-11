@@ -49,7 +49,7 @@
 <meta property="og:url" content="http://notes.cribug.com/2016/linux-rm/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
 <meta property="og:description" content="rm 是常用的命令，该命令的功能为删除一个目录中的一个或多个文件和目录，它也可以将某个目录及其下的所有文件和子目录均删除。对于链接文件，只是删除了链接，原有文件保持不变。rm是一个危险的命令，使用的时候要特别当心，否则整个系统就会毁掉（比如在/下执行rm -rf *）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。">
-<meta property="og:updated_time" content="2016-04-10T15:37:43.768Z">
+<meta property="og:updated_time" content="2016-04-10T15:42:06.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 命令之 rm">
 <meta name="twitter:description" content="rm 是常用的命令，该命令的功能为删除一个目录中的一个或多个文件和目录，它也可以将某个目录及其下的所有文件和子目录均删除。对于链接文件，只是删除了链接，原有文件保持不变。rm是一个危险的命令，使用的时候要特别当心，否则整个系统就会毁掉（比如在/下执行rm -rf *）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。">
@@ -217,8 +217,13 @@
 <p>rm是一个危险的命令，使用的时候要特别当心，否则整个系统就会毁掉（比如在/下执行 <code>rm -rf *</code> ）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
 <h3 id="1-_命令格式">1. 命令格式</h3><pre><code>rm <span class="string">[选项]</span> 文件
 </code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>删除一个目录中的一个或多个文件和目录，如果没有使用 <code>-r</code> 选项，则rm不会删除目录。 </p>
-<h3 id="3-_常用参数">3. 常用参数</h3><p>-f, –force             # 忽略不存在的文件，不给出提示。<br>-i, –interactive       # 进行交互式删除<br>-r, -R, –recursive     # 将列出的全部目录和子目录均递归地删除。<br>-v, –verbose           # 详细显示进行的步骤<br>    –help              # 显示此帮助信息并退出<br>    –version           # 输出版本信息并退出</p>
-<h3 id="4-_常用实例">4. 常用实例</h3><pre><code><span class="keyword">rm</span> 文件名       # 删除文件，系统会先询问是否删除
+<h3 id="3-_常用参数">3. 常用参数</h3><pre><code>-<span class="ruby">f, --force             <span class="comment"># 忽略不存在的文件，不给出提示。</span>
+</span>-<span class="ruby">i, --interactive       <span class="comment"># 进行交互式删除</span>
+</span>-<span class="ruby">r, -<span class="constant">R</span>, --recursive     <span class="comment"># 将列出的全部目录和子目录均递归地删除。</span>
+</span>-<span class="ruby">v, --verbose           <span class="comment"># 详细显示进行的步骤</span>
+</span>    -<span class="ruby">-help              <span class="comment"># 显示此帮助信息并退出</span>
+</span>    -<span class="ruby">-version           <span class="comment"># 输出版本信息并退出</span></span>
+</code></pre><h3 id="4-_常用实例">4. 常用实例</h3><pre><code><span class="keyword">rm</span> 文件名       # 删除文件，系统会先询问是否删除
 <span class="keyword">rm</span> -f 文件名    # 强行删除<span class="keyword">file</span>，系统不再提示
 <span class="keyword">rm</span> -i *.<span class="keyword">log</span>     # 删除任何.<span class="keyword">log</span>文件；删除前逐一询问确认
 <span class="keyword">rm</span> -r <span class="keyword">test</span>      # 将 <span class="keyword">test</span> 目录及目录中所有档案删除
@@ -243,6 +248,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/linux-rmdir/" rel="prev">Linux 命令之 rmdir</a>
             
           </div>
 
@@ -314,7 +321,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

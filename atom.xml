@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-10T15:37:43.768Z</updated>
+  <updated>2016-04-11T15:56:55.016Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -15,17 +15,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Linux 命令之 rmdir]]></title>
+    <link href="http://notes.cribug.com/2016/linux-rmdir/"/>
+    <id>http://notes.cribug.com/2016/linux-rmdir/</id>
+    <published>2016-04-11T15:52:00.000Z</published>
+    <updated>2016-04-11T15:56:55.016Z</updated>
+    <content type="html"><![CDATA[<p>rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（<code>rm - r dir</code> 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>rmdir <span class="string">[选项]</span> 目录
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>该命令从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对父目录的写权限。</p>
+<h3 id="3-_常用参数">3. 常用参数</h3><pre><code>-<span class="ruby">p              <span class="comment"># 递归删除目录dirname,当子目录删除后其父目录为空时，也一同被删除。</span>
+</span>                # 如果整个路径被删除或者由于某种原因保留部分路径，则系统在标准输出上显示相应的信息。 
+-<span class="ruby">v, --verbose   <span class="comment"># 显示指令执行过程</span></span>
+</code></pre><h3 id="3-_命令实例">3. 命令实例</h3>]]></content>
+    <summary type="html">
+    <![CDATA[rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（'rm - r dir' 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Linux 命令之 rm]]></title>
     <link href="http://notes.cribug.com/2016/linux-rm/"/>
     <id>http://notes.cribug.com/2016/linux-rm/</id>
     <published>2016-04-10T15:20:00.000Z</published>
-    <updated>2016-04-10T15:37:43.768Z</updated>
+    <updated>2016-04-10T15:42:06.101Z</updated>
     <content type="html"><![CDATA[<p>rm 是常用的命令，该命令的功能为删除一个目录中的一个或多个文件或目录，它也可以将某个目录及其下的所有文件和子目录均删除。对于链接文件，只是删除了链接，原有文件保持不变。</p>
 <p>rm是一个危险的命令，使用的时候要特别当心，否则整个系统就会毁掉（比如在/下执行 <code>rm -rf *</code> ）。所以，我们在执行rm之前最好先确认一下在哪个目录，到底要删除什么东西，操作时保持高度清醒的头脑。</p>
 <h3 id="1-_命令格式">1. 命令格式</h3><pre><code>rm <span class="string">[选项]</span> 文件
 </code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>删除一个目录中的一个或多个文件和目录，如果没有使用 <code>-r</code> 选项，则rm不会删除目录。 </p>
-<h3 id="3-_常用参数">3. 常用参数</h3><p>-f, –force             # 忽略不存在的文件，不给出提示。<br>-i, –interactive       # 进行交互式删除<br>-r, -R, –recursive     # 将列出的全部目录和子目录均递归地删除。<br>-v, –verbose           # 详细显示进行的步骤<br>    –help              # 显示此帮助信息并退出<br>    –version           # 输出版本信息并退出</p>
-<h3 id="4-_常用实例">4. 常用实例</h3><pre><code><span class="keyword">rm</span> 文件名       # 删除文件，系统会先询问是否删除
+<h3 id="3-_常用参数">3. 常用参数</h3><pre><code>-<span class="ruby">f, --force             <span class="comment"># 忽略不存在的文件，不给出提示。</span>
+</span>-<span class="ruby">i, --interactive       <span class="comment"># 进行交互式删除</span>
+</span>-<span class="ruby">r, -<span class="constant">R</span>, --recursive     <span class="comment"># 将列出的全部目录和子目录均递归地删除。</span>
+</span>-<span class="ruby">v, --verbose           <span class="comment"># 详细显示进行的步骤</span>
+</span>    -<span class="ruby">-help              <span class="comment"># 显示此帮助信息并退出</span>
+</span>    -<span class="ruby">-version           <span class="comment"># 输出版本信息并退出</span></span>
+</code></pre><h3 id="4-_常用实例">4. 常用实例</h3><pre><code><span class="keyword">rm</span> 文件名       # 删除文件，系统会先询问是否删除
 <span class="keyword">rm</span> -f 文件名    # 强行删除<span class="keyword">file</span>，系统不再提示
 <span class="keyword">rm</span> -i *.<span class="keyword">log</span>     # 删除任何.<span class="keyword">log</span>文件；删除前逐一询问确认
 <span class="keyword">rm</span> -r <span class="keyword">test</span>      # 将 <span class="keyword">test</span> 目录及目录中所有档案删除
