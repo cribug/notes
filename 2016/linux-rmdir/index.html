@@ -49,7 +49,7 @@
 <meta property="og:url" content="http://notes.cribug.com/2016/linux-rmdir/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
 <meta property="og:description" content="rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（&apos;rm - r dir&apos; 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。">
-<meta property="og:updated_time" content="2016-04-11T16:02:14.466Z">
+<meta property="og:updated_time" content="2016-04-14T15:55:35.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 命令之 rmdir">
 <meta name="twitter:description" content="rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（&apos;rm - r dir&apos; 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。">
@@ -218,6 +218,7 @@
 </code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>该命令从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对父目录的写权限。</p>
 <h3 id="3-_常用参数">3. 常用参数</h3><pre><code>-<span class="ruby">p              <span class="comment"># 递归删除目录dirname,当子目录删除后其父目录为空时，也一同被删除。</span>
 </span>                # 如果整个路径被删除或者由于某种原因保留部分路径，则系统在标准输出上显示相应的信息。 
+
 -<span class="ruby">v, --verbose   <span class="comment"># 显示指令执行过程</span></span>
 </code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code><span class="keyword">rmdir</span> dirname   <span class="comment"># 命令不能直接删除非空目录</span>
 <span class="keyword">rmdir</span> -p logs   <span class="comment"># 当子目录被删除后使它也成为空目录的话，则顺便一并删除 </span>
