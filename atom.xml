@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-14T15:55:35.175Z</updated>
+  <updated>2016-04-15T15:56:43.180Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux 命令之 mv]]></title>
+    <link href="http://notes.cribug.com/2016/linux-mv/"/>
+    <id>http://notes.cribug.com/2016/linux-mv/</id>
+    <published>2016-04-15T15:53:00.000Z</published>
+    <updated>2016-04-15T15:56:43.180Z</updated>
+    <content type="html"><![CDATA[<p>mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。</p>
+<h3 id="稍后上传。。。">稍后上传。。。</h3>]]></content>
+    <summary type="html">
+    <![CDATA[mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux 命令之 rmdir]]></title>
