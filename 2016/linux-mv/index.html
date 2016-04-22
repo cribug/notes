@@ -43,16 +43,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.png?v=0.4.5.1" />
 
 
-<meta name="description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。">
+<meta name="description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 命令之 mv">
 <meta property="og:url" content="http://notes.cribug.com/2016/linux-mv/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。">
-<meta property="og:updated_time" content="2016-04-16T15:57:19.625Z">
+<meta property="og:description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。">
+<meta property="og:updated_time" content="2016-04-22T15:44:12.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 命令之 mv">
-<meta name="twitter:description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。">
+<meta name="twitter:description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -213,8 +213,20 @@
       
 
       
-        <span itemprop="articleBody"><p>mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。</p>
-<h3 id="稍后上传。。。-">稍后上传。。。.</h3></span>
+        <span itemprop="articleBody"><p><code>mv</code> 命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>mv <span class="string">[选项]</span> 源文件或目录 目标文件或目录
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p><code>mv</code> 命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名。当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中。在跨文件系统移动文件时，mv先拷贝，再将原有文件删除，而链至该文件的链接也将丢失。</p>
+<h3 id="3-_命令参数">3. 命令参数</h3><pre><code>-<span class="ruby">b      <span class="comment"># 若需覆盖文件，则覆盖前先行备份。 </span>
+</span>-<span class="ruby">f      <span class="comment"># force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</span>
+</span>-<span class="ruby">i      <span class="comment"># 若目标文件 (destination) 已经存在时，就会询问是否覆盖！</span>
+</span>-<span class="ruby">u      <span class="comment"># 若目标文件已经存在，且 source 比较新，才会更新(update)</span>
+</span>-<span class="ruby">t      <span class="comment"># 指定目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</span></span>
+</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code># 文件改名
+mv <span class="keyword">test</span>.<span class="keyword">log</span> <span class="keyword">test</span>.txt
+
+# 移动文件
+mv <span class="keyword">test</span>.<span class="keyword">log</span> ./<span class="keyword">test</span>
+</code></pre></span>
       
     </div>
 
@@ -375,7 +387,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#稍后上传。。。-"><span class="nav-number">1.</span> <span class="nav-text">稍后上传。。。.</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_命令格式"><span class="nav-number">1.</span> <span class="nav-text">1. 命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_命令功能"><span class="nav-number">2.</span> <span class="nav-text">2. 命令功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_命令参数"><span class="nav-number">3.</span> <span class="nav-text">3. 命令参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_命令实例"><span class="nav-number">4.</span> <span class="nav-text">4. 命令实例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

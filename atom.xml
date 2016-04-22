@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-16T15:57:19.625Z</updated>
+  <updated>2016-04-22T15:44:12.497Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -19,11 +19,23 @@
     <link href="http://notes.cribug.com/2016/linux-mv/"/>
     <id>http://notes.cribug.com/2016/linux-mv/</id>
     <published>2016-04-15T15:53:00.000Z</published>
-    <updated>2016-04-16T15:57:19.625Z</updated>
-    <content type="html"><![CDATA[<p>mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。</p>
-<h3 id="稍后上传。。。-">稍后上传。。。.</h3>]]></content>
+    <updated>2016-04-22T15:44:12.497Z</updated>
+    <content type="html"><![CDATA[<p><code>mv</code> 命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>mv <span class="string">[选项]</span> 源文件或目录 目标文件或目录
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p><code>mv</code> 命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名。当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中。在跨文件系统移动文件时，mv先拷贝，再将原有文件删除，而链至该文件的链接也将丢失。</p>
+<h3 id="3-_命令参数">3. 命令参数</h3><pre><code>-<span class="ruby">b      <span class="comment"># 若需覆盖文件，则覆盖前先行备份。 </span>
+</span>-<span class="ruby">f      <span class="comment"># force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</span>
+</span>-<span class="ruby">i      <span class="comment"># 若目标文件 (destination) 已经存在时，就会询问是否覆盖！</span>
+</span>-<span class="ruby">u      <span class="comment"># 若目标文件已经存在，且 source 比较新，才会更新(update)</span>
+</span>-<span class="ruby">t      <span class="comment"># 指定目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</span></span>
+</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code># 文件改名
+mv <span class="keyword">test</span>.<span class="keyword">log</span> <span class="keyword">test</span>.txt
+
+# 移动文件
+mv <span class="keyword">test</span>.<span class="keyword">log</span> ./<span class="keyword">test</span>
+</code></pre>]]></content>
     <summary type="html">
-    <![CDATA[mv命令是move的缩写，可以用来移动文件或者将文件改名（move (rename) files），是Linux系统下常用的命令，经常用来备份文件或者目录。]]>
+    <![CDATA[mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。]]>
     
     </summary>
     
@@ -216,7 +228,7 @@ mkdir -vp scf/{<span class="class"><span class="keyword">lib</span>/,<span class
     <link href="http://notes.cribug.com/2016/linux-ls/"/>
     <id>http://notes.cribug.com/2016/linux-ls/</id>
     <published>2016-04-06T15:48:00.000Z</published>
-    <updated>2016-04-18T15:58:20.995Z</updated>
+    <updated>2016-04-21T09:51:04.657Z</updated>
     <content type="html"><![CDATA[<p><code>ls</code> 命令是linux下最常用的命令。<code>ls</code> 命令就是 <code>list</code> 的缩写，缺省下 <code>ls</code> 用来打印出当前目录的清单。如果 <code>ls</code> 指定其他目录，那么就会显示指定目录里的文件及文件夹清单。</p>
 <p>通过 <code>ls</code> 目录命令不仅可以查看linux文包含的文件，而且可以查看文件权限等信息。</p>
 <h3 id="1-_命令格式">1. 命令格式</h3><pre><code>ls <span class="string">[参数]</span> <span class="string">[目录名]</span>
