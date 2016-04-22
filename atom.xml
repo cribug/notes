@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-22T15:44:12.497Z</updated>
+  <updated>2016-04-22T16:19:05.155Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://notes.cribug.com/2016/linux-mv/"/>
     <id>http://notes.cribug.com/2016/linux-mv/</id>
     <published>2016-04-15T15:53:00.000Z</published>
-    <updated>2016-04-22T15:44:12.497Z</updated>
+    <updated>2016-04-22T16:19:05.155Z</updated>
     <content type="html"><![CDATA[<p><code>mv</code> 命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。</p>
 <h3 id="1-_命令格式">1. 命令格式</h3><pre><code>mv <span class="string">[选项]</span> 源文件或目录 目标文件或目录
 </code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p><code>mv</code> 命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名。当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中。在跨文件系统移动文件时，mv先拷贝，再将原有文件删除，而链至该文件的链接也将丢失。</p>
@@ -28,12 +28,37 @@
 </span>-<span class="ruby">i      <span class="comment"># 若目标文件 (destination) 已经存在时，就会询问是否覆盖！</span>
 </span>-<span class="ruby">u      <span class="comment"># 若目标文件已经存在，且 source 比较新，才会更新(update)</span>
 </span>-<span class="ruby">t      <span class="comment"># 指定目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</span></span>
-</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code># 文件改名
-mv <span class="keyword">test</span>.<span class="keyword">log</span> <span class="keyword">test</span>.txt
+</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code><span class="comment"># 文件改名</span>
+mv test.log test.txt
 
-# 移动文件
-mv <span class="keyword">test</span>.<span class="keyword">log</span> ./<span class="keyword">test</span>
-</code></pre>]]></content>
+<span class="comment"># 移动文件</span>
+mv test.log ./<span class="built_in">test</span>
+
+<span class="comment"># 将文件log1.txt, log2.txt移动到目录test中</span>
+mv <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt <span class="built_in">test</span>
+mv -t ./<span class="built_in">test</span> <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt
+
+<span class="comment"># 将文件file1改名为file2，如果file2已经存在，则询问是否覆盖</span>
+mv -i <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt
+
+<span class="comment"># 将文件file1改名为file2，即使file2存在，也是直接覆盖掉</span>
+<span class="comment"># -f是个危险的选项，使用的时候一定要保持头脑清晰，一般情况下最好不用加上它</span>
+mv <span class="operator">-f</span> <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt
+
+<span class="comment"># 如果目录dir2不存在，将目录dir1改名为dir2；否则，将dir1移动到dir2中</span>
+mv dir1 dir2
+
+<span class="comment"># 移动当前文件夹下的所有文件到上一级目录</span>
+mv * ../
+
+<span class="comment"># 把当前目录的一个子目录里的文件移动到另一个子目录里</span>
+mv ./<span class="built_in">test</span>1/* ./<span class="built_in">test</span>2
+
+<span class="comment"># 文件被覆盖前做简单备份，前面加参数-b</span>
+mv <span class="built_in">log</span>1.txt -b <span class="built_in">log</span>2.txt
+</code></pre><p>说明：<br>-b 不接受参数，mv会去读取环境变量VERSION_CONTROL来作为备份策略。<br>–backup该选项指定如果目标文件存在时的动作，共有四种备份策略：<br>1.CONTROL=none或off : 不备份。<br>2.CONTROL=numbered或t：数字编号的备份<br>3.CONTROL=existing或nil：如果存在以数字编号的备份，则继续编号备份m+1…n：<br>执行mv操作前已存在以数字编号的文件log2.txt.~1~，那么再次执行将产生log2.txt~2~，以次类推。如果之前没有以数字编号的文件，则使用下面讲到的简单备份。<br>4.CONTROL=simple或never：使用简单备份：在被覆盖前进行了简单备份，简单备份只能有一份，再次被覆盖时，简单备份也会被覆盖。</p>
+<p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/27/2743022.html" target="_blank" rel="external">每天一个linux命令: mv命令</a></p>
+]]></content>
     <summary type="html">
     <![CDATA[mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。]]>
     
