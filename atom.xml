@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-22T16:19:05.155Z</updated>
+  <updated>2016-04-22T16:43:11.835Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,6 +13,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux 命令之 cp]]></title>
+    <link href="http://notes.cribug.com/2016/linux-cp/"/>
+    <id>http://notes.cribug.com/2016/linux-cp/</id>
+    <published>2016-04-23T07:15:00.000Z</published>
+    <updated>2016-04-22T16:43:11.835Z</updated>
+    <content type="html"><![CDATA[<p>cp 命令用来复制文件或目录，是Linux系统中最常用的命令之一。在命令行下复制文件时，如果目标文件已经存在，就会询问是否覆盖，不管你是否使用-i参数。但是如果是在shell脚本中执行cp时，没有-i参数时不会询问是否覆盖。这说明命令行和shell脚本的执行方式有些不同。 </p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>cp <span class="string">[选项]</span> <span class="string">[-T]</span> 源 目的
+cp <span class="string">[选项]</span> 源 目录
+cp <span class="string">[选项]</span> -t 目录 源
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>将源文件复制至目标文件，或将多个源文件复制至目标目录</p>
+<!--
+### 3. 命令参数 ###
+-->
+<h3 id="3-_命令实例">3. 命令实例</h3><pre><code><span class="comment"># 复制单个文件到目标目录，文件在目标文件中不存在</span>
+<span class="comment"># 在没有带-a参数时，两个文件的时间是不一样的。在带了-a参数时，两个文件的时间是一致的</span>
+cp nginx.<span class="command">log</span> ./<span class="command">log</span>
+
+<span class="comment"># 目标文件存在时，会询问是否覆盖</span>
+<span class="comment"># 这是因为cp是cp -i的别名。目标文件存在时，即使加了-f标志，也还会询问是否覆盖</span>
+cp nginx.<span class="command">log</span> ./<span class="command">log</span>
+
+<span class="comment"># 复制整个目录</span>
+<span class="comment"># 目标目录存在与否结果是不一样的。目标目录存在时，整个源目录被复制到目标目录里面</span>
+cp test1 test2
+
+<span class="comment"># 复制的 log.log 建立一个连结档 log_link.log</span>
+<span class="comment"># 那个 log_link.log 是由 -s 的参数造成的，建立的是一个快捷方式</span>
+cp -s <span class="command">log</span>.<span class="command">log</span> log_link.<span class="command">log</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[cp 命令用来复制文件目录，是Linux系统中最常用的命令之一。在命令行下复制文件时，如果目标文件已经存在，就会询问是否覆盖，不管你是否使用-i参数。但是如果是在shell脚本中执行cp时，没有-i参数时不会询问是否覆盖。这说明命令行和shell脚本的执行方式有些不同。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux 命令之 mv]]></title>

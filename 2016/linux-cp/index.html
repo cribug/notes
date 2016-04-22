@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="Linux, mv, 每日Linux" />
+  <meta name="keywords" content="Linux, cp, 每日Linux" />
 
 
 
@@ -43,16 +43,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.png?v=0.4.5.1" />
 
 
-<meta name="description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。">
+<meta name="description" content="cp 命令用来复制文件目录，是Linux系统中最常用的命令之一。在命令行下复制文件时，如果目标文件已经存在，就会询问是否覆盖，不管你是否使用-i参数。但是如果是在shell脚本中执行cp时，没有-i参数时不会询问是否覆盖。这说明命令行和shell脚本的执行方式有些不同。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux 命令之 mv">
-<meta property="og:url" content="http://notes.cribug.com/2016/linux-mv/index.html">
+<meta property="og:title" content="Linux 命令之 cp">
+<meta property="og:url" content="http://notes.cribug.com/2016/linux-cp/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。">
-<meta property="og:updated_time" content="2016-04-22T16:19:05.155Z">
+<meta property="og:description" content="cp 命令用来复制文件目录，是Linux系统中最常用的命令之一。在命令行下复制文件时，如果目标文件已经存在，就会询问是否覆盖，不管你是否使用-i参数。但是如果是在shell脚本中执行cp时，没有-i参数时不会询问是否覆盖。这说明命令行和shell脚本的执行方式有些不同。">
+<meta property="og:updated_time" content="2016-04-22T16:43:11.835Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 命令之 mv">
-<meta name="twitter:description" content="mv命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。">
+<meta name="twitter:title" content="Linux 命令之 cp">
+<meta name="twitter:description" content="cp 命令用来复制文件目录，是Linux系统中最常用的命令之一。在命令行下复制文件时，如果目标文件已经存在，就会询问是否覆盖，不管你是否使用-i参数。但是如果是在shell脚本中执行cp时，没有-i参数时不会询问是否覆盖。这说明命令行和shell脚本的执行方式有些不同。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +62,7 @@
   };
 </script>
 
-  <title> Linux 命令之 mv | Cribug's Notes </title>
+  <title> Linux 命令之 cp | Cribug's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -178,7 +178,7 @@
           
           
             
-              Linux 命令之 mv
+              Linux 命令之 cp
             
           
         </h1>
@@ -187,8 +187,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-04-15T23:53:00+08:00" content="2016-04-15">
-            2016-04-15
+          <time itemprop="dateCreated" datetime="2016-04-23T15:15:00+08:00" content="2016-04-23">
+            2016-04-23
           </time>
         </span>
 
@@ -198,8 +198,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2016/linux-mv/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/linux-mv/" itemprop="commentsCount"></span>
+            <a href="/2016/linux-cp/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/linux-cp/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -213,45 +213,30 @@
       
 
       
-        <span itemprop="articleBody"><p><code>mv</code> 命令是move的缩写，可以用来移动文件或者将文件改名，是Linux系统下常用的命令，经常用来备份文件或者目录。</p>
-<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>mv <span class="string">[选项]</span> 源文件或目录 目标文件或目录
-</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p><code>mv</code> 命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名。当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中。在跨文件系统移动文件时，mv先拷贝，再将原有文件删除，而链至该文件的链接也将丢失。</p>
-<h3 id="3-_命令参数">3. 命令参数</h3><pre><code>-<span class="ruby">b      <span class="comment"># 若需覆盖文件，则覆盖前先行备份。 </span>
-</span>-<span class="ruby">f      <span class="comment"># force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</span>
-</span>-<span class="ruby">i      <span class="comment"># 若目标文件 (destination) 已经存在时，就会询问是否覆盖！</span>
-</span>-<span class="ruby">u      <span class="comment"># 若目标文件已经存在，且 source 比较新，才会更新(update)</span>
-</span>-<span class="ruby">t      <span class="comment"># 指定目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</span></span>
-</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code><span class="comment"># 文件改名</span>
-mv test.log test.txt
+        <span itemprop="articleBody"><p>cp 命令用来复制文件或目录，是Linux系统中最常用的命令之一。在命令行下复制文件时，如果目标文件已经存在，就会询问是否覆盖，不管你是否使用-i参数。但是如果是在shell脚本中执行cp时，没有-i参数时不会询问是否覆盖。这说明命令行和shell脚本的执行方式有些不同。 </p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>cp <span class="string">[选项]</span> <span class="string">[-T]</span> 源 目的
+cp <span class="string">[选项]</span> 源 目录
+cp <span class="string">[选项]</span> -t 目录 源
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>将源文件复制至目标文件，或将多个源文件复制至目标目录</p>
+<!--
+### 3. 命令参数 ###
+-->
+<h3 id="3-_命令实例">3. 命令实例</h3><pre><code><span class="comment"># 复制单个文件到目标目录，文件在目标文件中不存在</span>
+<span class="comment"># 在没有带-a参数时，两个文件的时间是不一样的。在带了-a参数时，两个文件的时间是一致的</span>
+cp nginx.<span class="command">log</span> ./<span class="command">log</span>
 
-<span class="comment"># 移动文件</span>
-mv test.log ./<span class="built_in">test</span>
+<span class="comment"># 目标文件存在时，会询问是否覆盖</span>
+<span class="comment"># 这是因为cp是cp -i的别名。目标文件存在时，即使加了-f标志，也还会询问是否覆盖</span>
+cp nginx.<span class="command">log</span> ./<span class="command">log</span>
 
-<span class="comment"># 将文件log1.txt, log2.txt移动到目录test中</span>
-mv <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt <span class="built_in">test</span>
-mv -t ./<span class="built_in">test</span> <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt
+<span class="comment"># 复制整个目录</span>
+<span class="comment"># 目标目录存在与否结果是不一样的。目标目录存在时，整个源目录被复制到目标目录里面</span>
+cp test1 test2
 
-<span class="comment"># 将文件file1改名为file2，如果file2已经存在，则询问是否覆盖</span>
-mv -i <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt
-
-<span class="comment"># 将文件file1改名为file2，即使file2存在，也是直接覆盖掉</span>
-<span class="comment"># -f是个危险的选项，使用的时候一定要保持头脑清晰，一般情况下最好不用加上它</span>
-mv <span class="operator">-f</span> <span class="built_in">log</span>1.txt <span class="built_in">log</span>2.txt
-
-<span class="comment"># 如果目录dir2不存在，将目录dir1改名为dir2；否则，将dir1移动到dir2中</span>
-mv dir1 dir2
-
-<span class="comment"># 移动当前文件夹下的所有文件到上一级目录</span>
-mv * ../
-
-<span class="comment"># 把当前目录的一个子目录里的文件移动到另一个子目录里</span>
-mv ./<span class="built_in">test</span>1/* ./<span class="built_in">test</span>2
-
-<span class="comment"># 文件被覆盖前做简单备份，前面加参数-b</span>
-mv <span class="built_in">log</span>1.txt -b <span class="built_in">log</span>2.txt
-</code></pre><p>说明：<br>-b 不接受参数，mv会去读取环境变量VERSION_CONTROL来作为备份策略。<br>–backup该选项指定如果目标文件存在时的动作，共有四种备份策略：<br>1.CONTROL=none或off : 不备份。<br>2.CONTROL=numbered或t：数字编号的备份<br>3.CONTROL=existing或nil：如果存在以数字编号的备份，则继续编号备份m+1…n：<br>执行mv操作前已存在以数字编号的文件log2.txt.~1~，那么再次执行将产生log2.txt~2~，以次类推。如果之前没有以数字编号的文件，则使用下面讲到的简单备份。<br>4.CONTROL=simple或never：使用简单备份：在被覆盖前进行了简单备份，简单备份只能有一份，再次被覆盖时，简单备份也会被覆盖。</p>
-<p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/27/2743022.html" target="_blank" rel="external">每天一个linux命令: mv命令</a></p>
-</span>
+<span class="comment"># 复制的 log.log 建立一个连结档 log_link.log</span>
+<span class="comment"># 那个 log_link.log 是由 -s 的参数造成的，建立的是一个快捷方式</span>
+cp -s <span class="command">log</span>.<span class="command">log</span> log_link.<span class="command">log</span>
+</code></pre></span>
       
     </div>
 
@@ -268,13 +253,11 @@ mv <span class="built_in">log</span>1.txt -b <span class="built_in">log</span>2.
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/linux-cp/" rel="prev">Linux 命令之 cp</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/linux-rmdir/" rel="next">Linux 命令之 rmdir</a>
+              <a href="/2016/linux-mv/" rel="next">Linux 命令之 mv</a>
             
           </div>
         </div>
@@ -414,7 +397,7 @@ mv <span class="built_in">log</span>1.txt -b <span class="built_in">log</span>2.
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_命令格式"><span class="nav-number">1.</span> <span class="nav-text">1. 命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_命令功能"><span class="nav-number">2.</span> <span class="nav-text">2. 命令功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_命令参数"><span class="nav-number">3.</span> <span class="nav-text">3. 命令参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_命令实例"><span class="nav-number">4.</span> <span class="nav-text">4. 命令实例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_命令格式"><span class="nav-number">1.</span> <span class="nav-text">1. 命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_命令功能"><span class="nav-number">2.</span> <span class="nav-text">2. 命令功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_命令实例"><span class="nav-number">3.</span> <span class="nav-text">3. 命令实例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -472,9 +455,9 @@ mv <span class="built_in">log</span>1.txt -b <span class="built_in">log</span>2.
 
     <script type="text/javascript">
       var disqus_shortname = 'cribug';
-      var disqus_identifier = '2016/linux-mv/';
-      var disqus_title = 'Linux 命令之 mv';
-      var disqus_url = 'http://notes.cribug.com/2016/linux-mv/';
+      var disqus_identifier = '2016/linux-cp/';
+      var disqus_title = 'Linux 命令之 cp';
+      var disqus_url = 'http://notes.cribug.com/2016/linux-cp/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
