@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-22T16:43:11.835Z</updated>
+  <updated>2016-04-27T16:15:50.831Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,6 +13,79 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux 命令学习目录]]></title>
+    <link href="http://notes.cribug.com/2016/linux-list/"/>
+    <id>http://notes.cribug.com/2016/linux-list/</id>
+    <published>2016-04-27T15:14:00.000Z</published>
+    <updated>2016-04-27T16:15:50.831Z</updated>
+    <content type="html"><![CDATA[<p>Linux 系统在学习和工作中需要经常用到，根据<a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html" target="_blank" rel="external">竹子-博客</a>，整理出了一份Linux命令资料。其他的参考资料有：</p>
+<ol>
+<li>《鸟哥的linux私房菜》</li>
+<li><a href="http://codingstandards.iteye.com/blog/786653" target="_blank" rel="external">我使用过的Linux命令系列总目录</a></li>
+<li><a href="http://roclinux.cn/?cat=3" target="_blank" rel="external">linux命令五分钟系列 </a></li>
+</ol>
+<h3 id="文件目录操作命令">文件目录操作命令</h3><ol>
+<li><a href="#">linux命令之 ls</a></li>
+<li><a href="#">linux命令之 cd</a></li>
+<li><a href="#">linux命令之 pwd</a></li>
+<li><a href="#">linux命令之 mkdir</a></li>
+<li><a href="#">linux命令之 rm</a></li>
+<li><a href="#">linux命令之 rmdir</a></li>
+<li><a href="#">linux命令之 mv</a></li>
+<li><a href="#">linux命令之 cp</a></li>
+<li><a href="#">linux命令之 touch</a></li>
+</ol>
+<h3 id="文件查找命令">文件查找命令</h3><h3 id="文件和目录属性">文件和目录属性</h3><h3 id="文件打包上传和下载">文件打包上传和下载</h3><h3 id="linux文件权限设置">linux文件权限设置</h3><h3 id="磁盘存储相关">磁盘存储相关</h3><h3 id="性能监控和优化命令">性能监控和优化命令</h3><h3 id="网络命令">网络命令</h3><p><a href="#">linux命令之 scp</a></p>
+<h3 id="其他命令">其他命令</h3><p><a href="#">linux命令之 crontab</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[Linux 系统在学习和工作中需要经常用到，根据<a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html">竹子-博客</a>，整理出了一份Linux命令资料。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Linux 命令之 touch]]></title>
+    <link href="http://notes.cribug.com/2016/linux-touch/"/>
+    <id>http://notes.cribug.com/2016/linux-touch/</id>
+    <published>2016-04-27T14:11:00.000Z</published>
+    <updated>2016-04-27T15:38:32.407Z</updated>
+    <content type="html"><![CDATA[<p>linux 的 <code>touch</code> 命令，一般在使用 <code>make</code> 的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>touch <span class="string">[选项]</span> 文件
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p><code>touch</code> 命令参数可更改文档或目录的日期时间，包括存取时间和更改时间。 </p>
+<h3 id="3-_命令参数">3. 命令参数</h3><pre><code>-<span class="ruby">a   或--time=atime或--time=access或--time=use 　只更改存取时间。
+</span>-<span class="ruby">c   或--no-create 　不建立任何文档。
+</span>-<span class="ruby">d 　使用指定的日期时间，而非现在的时间。
+</span>-<span class="ruby">f 　此参数将忽略不予处理，仅负责解决<span class="constant">BSD</span>版本touch指令的兼容性问题。
+</span>-<span class="ruby">m   或--time=mtime或--time=modify 　只更改变动时间。
+</span>-<span class="ruby">r 　把指定文档或目录的日期时间，统统设成和参考文档或目录的日期时间相同。
+</span>-<span class="ruby">t 　使用指定的日期时间，而非现在的时间。</span>
+</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code># 创建不存在的文件
+<span class="keyword">touch</span> test1.txt test2.txt
+
+# 更新log2.<span class="built_in">log</span>的时间和log1.<span class="built_in">log</span>时间戳相同
+<span class="keyword">touch</span> -r log1.<span class="built_in">log</span> log2.<span class="built_in">log</span>
+
+# 设定文件的时间戳
+<span class="keyword">touch</span> -t <span class="number">201211142234.50</span> <span class="built_in">log</span>.<span class="built_in">log</span>
+</code></pre><p>说明:</p>
+<p>-t 使用指定的时间值time作为指定文件相应时间戳记的新值。此处的time规定为如下形式的十进制数:</p>
+<p>[[CC]YY]MMDDhhmm[.SS]</p>
+<p>这里，CC为年数中的前两位，即”世纪数”；YY为年数的后两位，即某世纪中的年数．如果不给出CC的值，则touch   将把年数CCYY限定在1969–2068之内．MM为月数，DD为天将把年数CCYY限定在1969–2068之内．MM为月数，DD为天数，hh 为小时数(几点)，mm为分钟数，SS为秒数．此处秒的设定范围是0–61，这样可以处理闰秒．这些数字组成的时间是环境变量TZ指定的时区中的一个时 间．由于系统的限制，早于1970年1月1日的时间是错误的。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[linux 的 touch 命令，一般在使用make的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux 命令之 cp]]></title>
@@ -754,71 +827,6 @@ scp -r <span class="number">222.222</span>.<span class="number">222.222</span><s
     </summary>
     
       <category term="WeChat" scheme="http://notes.cribug.com/tags/WeChat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[MySQL备份与恢复]]></title>
-    <link href="http://notes.cribug.com/2015/mysql-backup/"/>
-    <id>http://notes.cribug.com/2015/mysql-backup/</id>
-    <published>2015-11-18T10:18:18.000Z</published>
-    <updated>2016-01-28T18:07:14.851Z</updated>
-    <content type="html"><![CDATA[<p>作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。</p>
-<h3 id="数据库备份">数据库备份</h3><ul>
-<li>进入MySQL的库目录（bin目录）。例如在Linux下，<code>cd /usr/local/mysql/bin</code>。</li>
-<li>利用MySQL命令导出数据库。<code>mysqldump -uroot -p test &gt; test.sql</code>（导出数据库test到test.sql文件）。<br>提示输入密码时，输入MySQL的用户名的密码。<br>Tip:如果导出单张表的话在数据库名后面键入表名即可。</li>
-<li>备份成功。会看到文件test.sql自动生成到bin目录下。</li>
-</ul>
-<h3 id="数据库还原">数据库还原</h3><h5 id="方法一">方法一</h5><ul>
-<li>将备份得到的.sql文件放到MySQL的库目录下。</li>
-<li>进入MySQL控制台。<code>mysql -uroot -p</code></li>
-<li>选择数据库。<br>自己新建一个数据库itest，<code>create database itest;</code><br>然后<code>use itest;</code> （或者直接选择已有的数据库）</li>
-<li>导入数据。<code>source test.sql;</code>。</li>
-</ul>
-<h5 id="方法二">方法二</h5><ul>
-<li>将备份得到的.sql文件放到MySQL的库目录下。</li>
-<li>然后打开命令行，直接导入数据。<code>mysql -uroot -p itest &lt; test.sql</code>（导入test.sql文件到数据库itest，前提是MySQL中要有itest这个数据库）。</li>
-<li>还原成功，可以到数据库中验证。</li>
-</ul>
-<p>Tip:如果可以直接运行mysql命令，可以不必进入MySQL库目录。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[作为一个小码农，刚开始数据库都是通过运行SQL语句来进行备份和还原的，数据多了，发现这个方法的效率很低，成功率也没有保障。今天做一个笔记（通过MySQL命令进行备份和还原），适用于Linux和Windows。]]>
-    
-    </summary>
-    
-      <category term="MySQL" scheme="http://notes.cribug.com/tags/MySQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[使用Fiddler和Wireshark进行手机抓包]]></title>
-    <link href="http://notes.cribug.com/2015/mobile-caught/"/>
-    <id>http://notes.cribug.com/2015/mobile-caught/</id>
-    <published>2015-11-11T03:11:11.000Z</published>
-    <updated>2016-01-28T18:07:10.048Z</updated>
-    <content type="html"><![CDATA[<p>在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。</p>
-<h3 id="使用Fiddler抓取Http（Fiddler只能抓取Http）">使用Fiddler抓取Http（Fiddler只能抓取Http）</h3><p>Fiddler可以拦截发出或者收到的Http，可以修改Http的Request和Response数据，因此用这种方法可以模拟一些特殊场景（如包无响应、模拟一些很难出现的错误码等）。:</p>
-<ul>
-<li>电脑和手机连接到同一个Wifi（同一局域网下）。</li>
-<li>电脑端：设置Fiddler，Tools—&gt;Fiddler Option，在connections选项卡下设置监听的端口号（默认8888），然后勾选“Allow remote computers connect”，点击“ok”。</li>
-<li>手机端：将该Wifi的代（dai）理（li）选项设置为手动，主机名填写电脑的IP，端口号填写电脑端刚刚设置端口号（默认8888），保存。</li>
-<li>设置完毕，电脑端重启Fiddler，操作手机，即可在电脑端的Fiddler上看到http码流。</li>
-</ul>
-<h3 id="使用Wireshark抓包（需要电脑携带无线网卡）">使用Wireshark抓包（需要电脑携带无线网卡）</h3><p>该方法手机无须root，并且适用于各种有wifi功能的手机（IOS、Android等）、平板等。只要电脑的无线网卡具有无线承载功能，就可以。</p>
-<ul>
-<li>把电脑的网络做为热点分享出去。</li>
-<li>手机连接电脑热点。</li>
-<li>启动Wireshark，选择做为热点的网卡，点击start开始抓包。</li>
-<li>操作手机，可以抓取到手机所有与网络交互的数据包，如需停止，直接点击wireshark的stop即可。</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[在App、移动端Web、微信公众号等开发过程中，总会出现这样或者那样的问题，很多数据不好获取，可以通过电脑抓包手机数据的方式来获取数据，从而排除错误。]]>
-    
-    </summary>
-    
-      <category term="抓包" scheme="http://notes.cribug.com/tags/%E6%8A%93%E5%8C%85/"/>
     
   </entry>
   

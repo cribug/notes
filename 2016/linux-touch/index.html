@@ -32,7 +32,7 @@
 
 
 
-  <meta name="keywords" content="Linux, rmdir, 每日Linux" />
+  <meta name="keywords" content="Linux, touch, 每日Linux" />
 
 
 
@@ -43,16 +43,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.png?v=0.4.5.1" />
 
 
-<meta name="description" content="rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（&apos;rm - r dir&apos; 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。">
+<meta name="description" content="linux 的 touch 命令，一般在使用make的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux 命令之 rmdir">
-<meta property="og:url" content="http://notes.cribug.com/2016/linux-rmdir/index.html">
+<meta property="og:title" content="Linux 命令之 touch">
+<meta property="og:url" content="http://notes.cribug.com/2016/linux-touch/index.html">
 <meta property="og:site_name" content="Cribug's Notes">
-<meta property="og:description" content="rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（&apos;rm - r dir&apos; 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。">
-<meta property="og:updated_time" content="2016-04-14T15:55:35.175Z">
+<meta property="og:description" content="linux 的 touch 命令，一般在使用make的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。">
+<meta property="og:updated_time" content="2016-04-27T15:38:32.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux 命令之 rmdir">
-<meta name="twitter:description" content="rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（&apos;rm - r dir&apos; 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。">
+<meta name="twitter:title" content="Linux 命令之 touch">
+<meta name="twitter:description" content="linux 的 touch 命令，一般在使用make的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -62,7 +62,7 @@
   };
 </script>
 
-  <title> Linux 命令之 rmdir | Cribug's Notes </title>
+  <title> Linux 命令之 touch | Cribug's Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -178,7 +178,7 @@
           
           
             
-              Linux 命令之 rmdir
+              Linux 命令之 touch
             
           
         </h1>
@@ -187,8 +187,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2016-04-11T23:52:00+08:00" content="2016-04-11">
-            2016-04-11
+          <time itemprop="dateCreated" datetime="2016-04-27T22:11:00+08:00" content="2016-04-27">
+            2016-04-27
           </time>
         </span>
 
@@ -198,8 +198,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2016/linux-rmdir/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/linux-rmdir/" itemprop="commentsCount"></span>
+            <a href="/2016/linux-touch/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/linux-touch/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -213,16 +213,28 @@
       
 
       
-        <span itemprop="articleBody"><p>rmdir 命令的功能是删除空目录，一个目录被删除之前必须是空的。（<code>rm - r dir</code> 命令可代替rmdir，但是有很大危险性。）删除某目录时也必须具有对父目录的写权限。</p>
-<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>rmdir <span class="string">[选项]</span> 目录
-</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>该命令从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对父目录的写权限。</p>
-<h3 id="3-_常用参数">3. 常用参数</h3><pre><code>-<span class="ruby">p              <span class="comment"># 递归删除目录dirname,当子目录删除后其父目录为空时，也一同被删除。</span>
-</span>                # 如果整个路径被删除或者由于某种原因保留部分路径，则系统在标准输出上显示相应的信息。 
+        <span itemprop="articleBody"><p>linux 的 <code>touch</code> 命令，一般在使用 <code>make</code> 的时候可能会用到，用来修改文件时间戳，或者新建一个不存在的文件。</p>
+<h3 id="1-_命令格式">1. 命令格式</h3><pre><code>touch <span class="string">[选项]</span> 文件
+</code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p><code>touch</code> 命令参数可更改文档或目录的日期时间，包括存取时间和更改时间。 </p>
+<h3 id="3-_命令参数">3. 命令参数</h3><pre><code>-<span class="ruby">a   或--time=atime或--time=access或--time=use 　只更改存取时间。
+</span>-<span class="ruby">c   或--no-create 　不建立任何文档。
+</span>-<span class="ruby">d 　使用指定的日期时间，而非现在的时间。
+</span>-<span class="ruby">f 　此参数将忽略不予处理，仅负责解决<span class="constant">BSD</span>版本touch指令的兼容性问题。
+</span>-<span class="ruby">m   或--time=mtime或--time=modify 　只更改变动时间。
+</span>-<span class="ruby">r 　把指定文档或目录的日期时间，统统设成和参考文档或目录的日期时间相同。
+</span>-<span class="ruby">t 　使用指定的日期时间，而非现在的时间。</span>
+</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code># 创建不存在的文件
+<span class="keyword">touch</span> test1.txt test2.txt
 
--<span class="ruby">v, --verbose   <span class="comment"># 显示指令执行过程</span></span>
-</code></pre><h3 id="4-_命令实例">4. 命令实例</h3><pre><code><span class="keyword">rmdir</span> dirname   <span class="comment"># 命令不能直接删除非空目录</span>
-<span class="keyword">rmdir</span> -p logs   <span class="comment"># 当子目录被删除后使它也成为空目录的话，则顺便一并删除 </span>
-</code></pre><p>整理自: <a href="http://www.cnblogs.com/peida/archive/2012/10/27/2742076.html" target="_blank" rel="external">每天一个linux命令: rmdir命令</a></p>
+# 更新log2.<span class="built_in">log</span>的时间和log1.<span class="built_in">log</span>时间戳相同
+<span class="keyword">touch</span> -r log1.<span class="built_in">log</span> log2.<span class="built_in">log</span>
+
+# 设定文件的时间戳
+<span class="keyword">touch</span> -t <span class="number">201211142234.50</span> <span class="built_in">log</span>.<span class="built_in">log</span>
+</code></pre><p>说明:</p>
+<p>-t 使用指定的时间值time作为指定文件相应时间戳记的新值。此处的time规定为如下形式的十进制数:</p>
+<p>[[CC]YY]MMDDhhmm[.SS]</p>
+<p>这里，CC为年数中的前两位，即”世纪数”；YY为年数的后两位，即某世纪中的年数．如果不给出CC的值，则touch   将把年数CCYY限定在1969–2068之内．MM为月数，DD为天将把年数CCYY限定在1969–2068之内．MM为月数，DD为天数，hh 为小时数(几点)，mm为分钟数，SS为秒数．此处秒的设定范围是0–61，这样可以处理闰秒．这些数字组成的时间是环境变量TZ指定的时区中的一个时 间．由于系统的限制，早于1970年1月1日的时间是错误的。</p>
 </span>
       
     </div>
@@ -240,13 +252,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/linux-mv/" rel="prev">Linux 命令之 mv</a>
+              <a href="/2016/linux-list/" rel="prev">Linux 命令学习目录</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/linux-rm/" rel="next">Linux 命令之 rm</a>
+              <a href="/2016/linux-cp/" rel="next">Linux 命令之 cp</a>
             
           </div>
         </div>
@@ -386,7 +398,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_命令格式"><span class="nav-number">1.</span> <span class="nav-text">1. 命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_命令功能"><span class="nav-number">2.</span> <span class="nav-text">2. 命令功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_常用参数"><span class="nav-number">3.</span> <span class="nav-text">3. 常用参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_命令实例"><span class="nav-number">4.</span> <span class="nav-text">4. 命令实例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-_命令格式"><span class="nav-number">1.</span> <span class="nav-text">1. 命令格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-_命令功能"><span class="nav-number">2.</span> <span class="nav-text">2. 命令功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-_命令参数"><span class="nav-number">3.</span> <span class="nav-text">3. 命令参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-_命令实例"><span class="nav-number">4.</span> <span class="nav-text">4. 命令实例</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -444,9 +456,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'cribug';
-      var disqus_identifier = '2016/linux-rmdir/';
-      var disqus_title = 'Linux 命令之 rmdir';
-      var disqus_url = 'http://notes.cribug.com/2016/linux-rmdir/';
+      var disqus_identifier = '2016/linux-touch/';
+      var disqus_title = 'Linux 命令之 touch';
+      var disqus_url = 'http://notes.cribug.com/2016/linux-touch/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
