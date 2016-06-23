@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://notes.cribug.com/"/>
-  <updated>2016-04-27T16:15:50.831Z</updated>
+  <updated>2016-04-27T15:38:32.407Z</updated>
   <id>http://notes.cribug.com/</id>
   
   <author>
@@ -13,41 +13,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[Linux 命令学习目录]]></title>
-    <link href="http://notes.cribug.com/2016/linux-list/"/>
-    <id>http://notes.cribug.com/2016/linux-list/</id>
-    <published>2016-04-27T15:14:00.000Z</published>
-    <updated>2016-04-27T16:15:50.831Z</updated>
-    <content type="html"><![CDATA[<p>Linux 系统在学习和工作中需要经常用到，根据<a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html" target="_blank" rel="external">竹子-博客</a>，整理出了一份Linux命令资料。其他的参考资料有：</p>
-<ol>
-<li>《鸟哥的linux私房菜》</li>
-<li><a href="http://codingstandards.iteye.com/blog/786653" target="_blank" rel="external">我使用过的Linux命令系列总目录</a></li>
-<li><a href="http://roclinux.cn/?cat=3" target="_blank" rel="external">linux命令五分钟系列 </a></li>
-</ol>
-<h3 id="文件目录操作命令">文件目录操作命令</h3><ol>
-<li><a href="#">linux命令之 ls</a></li>
-<li><a href="#">linux命令之 cd</a></li>
-<li><a href="#">linux命令之 pwd</a></li>
-<li><a href="#">linux命令之 mkdir</a></li>
-<li><a href="#">linux命令之 rm</a></li>
-<li><a href="#">linux命令之 rmdir</a></li>
-<li><a href="#">linux命令之 mv</a></li>
-<li><a href="#">linux命令之 cp</a></li>
-<li><a href="#">linux命令之 touch</a></li>
-</ol>
-<h3 id="文件查找命令">文件查找命令</h3><h3 id="文件和目录属性">文件和目录属性</h3><h3 id="文件打包上传和下载">文件打包上传和下载</h3><h3 id="linux文件权限设置">linux文件权限设置</h3><h3 id="磁盘存储相关">磁盘存储相关</h3><h3 id="性能监控和优化命令">性能监控和优化命令</h3><h3 id="网络命令">网络命令</h3><p><a href="#">linux命令之 scp</a></p>
-<h3 id="其他命令">其他命令</h3><p><a href="#">linux命令之 crontab</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[Linux 系统在学习和工作中需要经常用到，根据<a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html">竹子-博客</a>，整理出了一份Linux命令资料。]]>
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[Linux 命令之 touch]]></title>
@@ -246,7 +211,7 @@ mv <span class="built_in">log</span>1.txt -b <span class="built_in">log</span>2.
     <link href="http://notes.cribug.com/2016/linux-mkdir/"/>
     <id>http://notes.cribug.com/2016/linux-mkdir/</id>
     <published>2016-04-09T15:03:00.000Z</published>
-    <updated>2016-04-10T15:12:29.714Z</updated>
+    <updated>2016-06-23T18:20:58.949Z</updated>
     <content type="html"><![CDATA[<p><code>mkdir</code> 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。</p>
 <h3 id="1-_命令格式">1. 命令格式</h3><pre><code>mkdir <span class="string">[选项]</span> 目录名
 </code></pre><h3 id="2-_命令功能">2. 命令功能</h3><p>通过 <code>mkdir</code> 命令用来创建指定的名称的目录，要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录，即同一个目录下不能有同名的（区分大小写）。 </p>
@@ -376,6 +341,41 @@ mkdir -vp scf/{<span class="class"><span class="keyword">lib</span>/,<span class
 <!-- ### 4. 常用范例 ### -->]]></content>
     <summary type="html">
     <![CDATA[ls命令是linux下最常用的命令。ls命令就是list的缩写，缺省下ls用来打印出当前目录的清单。如果ls指定其他目录，那么就会显示指定目录里的文件及文件夹清单。通过ls 命令不仅可以查看linux目录包含的文件，而且可以查看文件权限等信息。]]>
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://notes.cribug.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Linux 命令学习目录]]></title>
+    <link href="http://notes.cribug.com/2016/linux-list/"/>
+    <id>http://notes.cribug.com/2016/linux-list/</id>
+    <published>2016-04-05T12:45:00.000Z</published>
+    <updated>2016-06-23T18:21:15.033Z</updated>
+    <content type="html"><![CDATA[<p>Linux 系统在学习和工作中需要经常用到，根据<a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html" target="_blank" rel="external">竹子-博客</a>，整理出了一份Linux命令资料。其他的参考资料有：</p>
+<ol>
+<li>《鸟哥的linux私房菜》</li>
+<li><a href="http://codingstandards.iteye.com/blog/786653" target="_blank" rel="external">我使用过的Linux命令系列总目录</a></li>
+<li><a href="http://roclinux.cn/?cat=3" target="_blank" rel="external">linux命令五分钟系列 </a></li>
+</ol>
+<h3 id="文件目录操作命令">文件目录操作命令</h3><ol>
+<li><a href="#">linux命令之 ls</a></li>
+<li><a href="#">linux命令之 cd</a></li>
+<li><a href="#">linux命令之 pwd</a></li>
+<li><a href="#">linux命令之 mkdir</a></li>
+<li><a href="#">linux命令之 rm</a></li>
+<li><a href="#">linux命令之 rmdir</a></li>
+<li><a href="#">linux命令之 mv</a></li>
+<li><a href="#">linux命令之 cp</a></li>
+<li><a href="#">linux命令之 touch</a></li>
+</ol>
+<h3 id="文件查找命令">文件查找命令</h3><h3 id="文件和目录属性">文件和目录属性</h3><h3 id="文件打包上传和下载">文件打包上传和下载</h3><h3 id="linux文件权限设置">linux文件权限设置</h3><h3 id="磁盘存储相关">磁盘存储相关</h3><h3 id="性能监控和优化命令">性能监控和优化命令</h3><h3 id="网络命令">网络命令</h3><p><a href="#">linux命令之 scp</a></p>
+<h3 id="其他命令">其他命令</h3><p><a href="#">linux命令之 crontab</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[Linux 系统在学习和工作中需要经常用到，根据<a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html">竹子-博客</a>，整理出了一份Linux命令资料。]]>
     
     </summary>
     
